@@ -44,5 +44,5 @@
  
  ## 👍 Acknowledgements
  > Special thanks to...
- - F. Böhnke - initial idea
- - ...
+ - F. Böhnke - Initial Idea
+ - [Hatchful](https://hatchful.shopify.com/) - Easy Logo Generation
