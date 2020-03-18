@@ -1,8 +1,8 @@
 <!-- LOGO -->
 <br />
 <p align="center">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  <h3 align="center">{Corona-Hackathon}</h3>
+    <img src="images/logo.png" alt="Logo" width="200" height="200">
+  <h3 align="center">Corona-Hackathon</h3>
 
   <p align="center">
     #WirVsVirus Corona-Crisis Hackathon - organized by the German government
