@@ -57,7 +57,7 @@ The **secret sauce** of SWA is a **benevolent artificial intelligence** that tri
 
 In order to be as transparent as possible, and provide a clean and reproducible line of thought, we captured all our technological decision with the help of [Architecture Decision Records](https://github.com/joelparkerhenderson/architecture_decision_record) which you can find in the [`/doc/architecture`](./doc/architecture) folder.
 
-## 💪 Get Involed
+## 💪 Get Involved
 > How can you help & get involved?
 
 **As an employer** you simply follow these steps:
