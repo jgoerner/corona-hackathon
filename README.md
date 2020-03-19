@@ -34,7 +34,7 @@ The current measures for short-time-work are **bureaucratic**, job agencies are 
 ## 🚀 Solution
 > How are we trying to solve this problem?
 
-SWA helps to mitigate this imbalance and directly connects employer and employees, building on the principles **ease of use**, **flexibility** & **optized allocation**.
+SWA helps to mitigate this imbalance and directly connects employer and employees, building on the principles **ease of use**, **flexibility** & **optimized allocation**.
 
 ## 🧪 Unique Selling Point
 > What is unique about our approach
