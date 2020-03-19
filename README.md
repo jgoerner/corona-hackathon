@@ -1,7 +1,7 @@
 <!-- LOGO -->
 <br />
 <p align="center">
-    <img src="images/logo.png" alt="Logo" width="200" height="200">
+    <img src="images/logo-swag.png" alt="Logo" width="200" height="200">
   <h3 align="center">Smart Workforce Allocator Allocator Germany - SWAG</h3>
 
   <p align="center">
