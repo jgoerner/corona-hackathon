@@ -19,6 +19,7 @@
 * [Problem Statement](#-problem-statement)
 * [Solution](#-solution)
 * [Unique Selling Point](#-unique-selling-point)
+* [Technical Documentation](#-technical-documentation)
 * [Get Involed](#-get-involved)
 * [Contact](#-contact)
 * [Acknowledgements](#-acknowledgements)
@@ -50,6 +51,11 @@ Even though the recommendation built on an optimized allocation, every user can 
 
 #### - Optimized Allocation -
 The **secret sauce** of SWA is a **benevolent artificial intelligence** that tries to maximize the benefit for all parties (for further details of the problem domain you might want to take a look at [assignment problems](https://en.wikipedia.org/wiki/Assignment_problem) or [the adwords problem](http://infolab.stanford.edu/~ullman/mmds/ch8.pdf))
+
+## 📑 Technical Documentation
+> What was the rationale behind certain decisions we've made?
+
+In order to be as transparent as possible, and provide a clean and reproducible line of thought, we captured all our technological decision with the help of [Architecture Decision Records](https://github.com/joelparkerhenderson/architecture_decision_record) which you can find in the [`/doc/architecture`](./doc/architecture) folder.
 
 ## 💪 Get Involed
 > How can you help & get involved?
