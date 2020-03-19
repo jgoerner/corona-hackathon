@@ -16,12 +16,12 @@
 
 ## 🗂 Table of Contents
 
-* [Problem Statement](#problem-statement)
-* [Solution](#solution)
-* [Unique Selling Point](#unique-selling-point)
-* [Get Involed](#get-involved)
-* [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
+* [Problem Statement](#-problem-statement)
+* [Solution](#-solution)
+* [Unique Selling Point](#-unique-selling-point)
+* [Get Involed](#-get-involved)
+* [Contact](#-contact)
+* [Acknowledgements](#-acknowledgements)
 
 ## 🤯 Problem Statement
 > What exact problem are we trying to solve?
