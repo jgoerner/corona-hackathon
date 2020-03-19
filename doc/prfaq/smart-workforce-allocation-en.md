@@ -7,7 +7,7 @@ Smart Workforce Allocator (SWA) is a martketplace to connect idle qualified peop
 ## Problem
 The corona-pandemic not only disrupted the global health system but also the global economy.
 A variety of industry branches (e.g. hotels, travel agencies, etc) are getting bankrupt while others can't satisfy the peeking demand (e.g. grocery stores).
-This leads to an extreme imbalance of a lot of idle, well qualified people, willing to work & help and on the other hand a massive number of companies, that have trouble getting employees to do the work.
+This leads to an extreme imbalance of a lot of idle, well qualified people, willing to work & help and on the other hand a massive number of companies, that have trouble getting employees to do the work - even forcing people to return from their vacation.
 The current measures for short-time-work are **bureaucratic**, job agencies are **overloaded** and the information is **not transparent**.
 
 ## Solution
