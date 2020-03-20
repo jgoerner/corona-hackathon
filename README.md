@@ -19,6 +19,7 @@
 * [Problem Statement](#-problem-statement)
 * [Solution](#-solution)
 * [Unique Selling Point](#-unique-selling-point)
+* [User Stories](#-user-stories)
 * [Technical Documentation](#-technical-documentation)
 * [Get Involed](#-get-involved)
 * [Contact](#-contact)
@@ -51,6 +52,20 @@ Even though the recommendation built on an optimized allocation, every user can 
 
 #### - Optimized Allocation -
 The **secret sauce** of SWA is a **benevolent artificial intelligence** that tries to maximize the benefit for all parties (for further details of the problem domain you might want to take a look at [assignment problems](https://en.wikipedia.org/wiki/Assignment_problem) or [the adwords problem](http://infolab.stanford.edu/~ullman/mmds/ch8.pdf))
+
+## 🦄 User Stories
+> What concrete user stories do we have in the current scope?
+
+In order to make our solution approach a bit more tangible and down to earth, we are using [Domain Storytelling](https://domainstorytelling.org/).
+All user stories can be found in the [`./doc/user-stories/`](./doc/user-stories) folder.
+The following user stories are our main focus:
+
+<details><summary>🙋‍♂️➡️🧰Volunteer Job Mathching </summary>
+<p>
+<img src="./doc/user-stories/img/user-job-matching_2020-03-20.png" style="width:80%" />
+</p>
+</details>
+
 
 ## 📑 Technical Documentation
 > What was the rationale behind certain decisions we've made?
