@@ -2,7 +2,7 @@
 <br />
 <p align="center">
     <img src="images/logo-swag.png" alt="Logo" width="200" height="200">
-  <h3 align="center">Smart Workforce Allocator Allocator Germany - SWAG</h3>
+  <h3 align="center">Smart Workforce Allocator Germany - SWAG</h3>
 
   <p align="center">
     #WirVsVirus Corona-Crisis Hackathon - organized by the German government
@@ -38,15 +38,15 @@ The current measures for short-time-work are **bureaucratic**, job agencies are 
 ## 🚀 Solution
 > How are we trying to solve this problem?
 
-SWA helps to mitigate this imbalance and directly connects employer and employees, building on the principles **ease of use**, **flexibility** & **optimized allocation**.
+SWAG helps to mitigate this imbalance and directly connects employer and employees, building on the principles **ease of use**, **flexibility** & **optimized allocation**.
 
 ## 🧪 Unique Selling Point
 > What is unique about our approach
 
 #### - Credibility -
-SWA is built & run in collaboration with federal agencies, making it as credible as the government itself.
+SWAG is built & run in collaboration with federal agencies, making it as credible as the government itself.
 All users have  24hr the option to notify the administrators about suspicious behaviour or raise concers about certain incidents.
-SWA tries to be as transparent as possible - a key driver in times of crisis.
+SWAG tries to be as transparent as possible - a key driver in times of crisis.
 
 #### - Flexibility  -
 Both, employers and employees have the full freedom to specify their demands.
