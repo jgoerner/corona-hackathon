@@ -98,6 +98,7 @@ In order to be as transparent as possible, and provide a clean and reproducible 
 > Who are we?
 
 - [Lorena Schlesigner](https://github.com/lschlesinger)
+- [Floris Roltsch](https://github.com/floro91)
 - [Daniel Elsner](https://github.com/delsner)
 - [Joshua Görner](https://github.com/jgoerner)
  
