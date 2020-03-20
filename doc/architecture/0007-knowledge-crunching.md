@@ -1,0 +1,19 @@
+# 7. knowledge crunching
+
+Date: 2020-03-20
+
+## Status
+
+Accepted
+
+## Context
+
+We have to make a decision, how we describe the core use cases of the application.
+
+## Decision
+
+We use [Domain Story Telling](https://domainstorytelling.org/) to describe core use cases & interactions.
+
+## Consequences
+
+Optionally [Domain Story Modeler](https://github.com/WPS/domain-story-modeler) can be used as a lightweight tool.
