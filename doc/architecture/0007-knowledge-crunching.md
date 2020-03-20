@@ -13,6 +13,7 @@ We have to make a decision, how we describe the core use cases of the applicatio
 ## Decision
 
 We use [Domain Storytelling](https://domainstorytelling.org/) to describe core use cases & interactions.
+All user stories can be found in the [`./doc/user-stories`](./doc/user-stories) directory.
 
 ## Consequences
 
