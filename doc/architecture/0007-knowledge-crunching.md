@@ -12,7 +12,7 @@ We have to make a decision, how we describe the core use cases of the applicatio
 
 ## Decision
 
-We use [Domain Story Telling](https://domainstorytelling.org/) to describe core use cases & interactions.
+We use [Domain Storytelling](https://domainstorytelling.org/) to describe core use cases & interactions.
 
 ## Consequences
 
