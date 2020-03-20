@@ -10,7 +10,9 @@
     <br />
     <a href="">View Demo</a>
     ·
-    <a href="">Get Involved</a>
+    <a href="https://github.com/jgoerner/corona-hackathon/projects/1">Current Status</a>
+    ·
+    <a href="https://github.com/jgoerner/corona-hackathon/issues/new?assignees=&labels=&template=workpackage.md&title=">Get Involved</a>
   </p>
 </p>
 
