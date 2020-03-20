@@ -22,6 +22,7 @@ The issue ...
 - [ ] ... has a concise description
 - [ ] ... has a content label (e.g. `infrastructure`, `frontend`, `backend`, ...)
 - [ ] ... has a difficulty label (e.g. `easy`, `medium`, `hard`, ...)
+- [ ] ...is linked to the project
 - [ ] ... has a definition of done
 
 ## ✅Definition of Done 
