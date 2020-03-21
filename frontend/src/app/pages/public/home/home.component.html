@@ -1,0 +1,14 @@
+<nz-content>
+  <div class="home__content">
+    <h1 nz-title>Smart Workforce Allocator Germany (S.W.A.G.)</h1>
+    <h4 nz-title>Corona will kill us all...</h4>
+  </div>
+  <nz-carousel nzDotPosition="right" nzAutoPlay>
+    <div nz-carousel-content
+         *ngFor="let src of carouselImages">
+      <div [style.backgroundImage]="'url('+ src +')'"
+           style="height: 400px; width:100%; background-position: center; background-repeat: no-repeat; background-size: cover;"
+      ></div>
+    </div>
+  </nz-carousel>
+</nz-content>

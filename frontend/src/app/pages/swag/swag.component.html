@@ -1,0 +1,64 @@
+<nz-layout class="app-layout">
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" nzWidth="200px" nzTheme="dark">
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed" class="sider-menu">
+      <li nz-menu-item
+          routerLink="account"
+          nzMatchRouterExact
+          nzMatchRouter>
+        <i nz-icon nzType="user"></i>
+        <span>User</span>
+      </li>
+      <li nz-submenu
+          nzOpen
+          nzTitle="Find Job"
+          nzIcon="search">
+        <ul>
+          <li nz-menu-item
+              nzMatchRouterExact
+              nzMatchRouter
+              routerLink="find/profile">
+            <i nz-icon nzType="profile"></i>
+            <span>Profile</span>
+          </li>
+          <li nz-menu-item
+              nzMatchRouterExact
+              nzMatchRouter
+              routerLink="find/matching">
+            <i nz-icon nzType="like"></i>
+            <span>Matching</span>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu
+          nzOpen
+          nzTitle="Offer Job"
+          nzIcon="pushpin">
+        <ul>
+          <li nz-menu-item nzMatchRouterExact
+              nzMatchRouter
+              routerLink="offer/profile">
+            <i nz-icon nzType="profile"></i>
+            <span>Profile</span>
+          </li>
+          <li nz-menu-item nzMatchRouterExact
+              nzMatchRouter
+              routerLink="offer/create">
+            <i nz-icon nzType="plus"></i>
+            <span>New Offer</span>
+          </li>
+          <li nz-menu-item nzMatchRouterExact
+              nzMatchRouter
+              routerLink="offer/list">
+            <i nz-icon nzType="unordered-list"></i>
+            <span>My Offers</span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout class="inner-layout">
+    <nz-content>
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
