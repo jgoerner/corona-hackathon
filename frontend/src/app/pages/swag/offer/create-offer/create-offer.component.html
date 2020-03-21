@@ -1,1 +1,10 @@
-<p>create-offer works!</p>
+<article nz-typography>
+  <h1 nz-title><i nz-icon nzType="pushpin" nzTheme="fill"></i>JOB OFFER</h1>
+</article>
+
+<nz-steps nzDirection="horizontal" [nzCurrent]="index" (nzIndexChange)="onIndexChange($event)">
+  <nz-step nzTitle="Meta Data" nzDescription="Give information about Job Location, Job Title, Stating Time and Salary"></nz-step>
+  <nz-step nzTitle="Skills" nzDescription="Describe the required skill set"></nz-step>
+  <nz-step nzTitle="Welcome Info" nzDescription="Give the new employee useful information that is required for having an amazing first day which all information and possible equipement needed"></nz-step>
+</nz-steps>
+

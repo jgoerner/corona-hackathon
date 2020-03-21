@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateOfferComponent implements OnInit {
 
+  index = 0;
+  disable = false;
+  onIndexChange(index: number): void {
+    this.index = index;
+  }
+
   constructor() { }
 
   ngOnInit() {
