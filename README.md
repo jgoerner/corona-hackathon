@@ -75,23 +75,8 @@ In order to be as transparent as possible, and provide a clean and reproducible 
 ## 💪 Get Involved
 > How can you help & get involved?
 
-**As an employer** you simply follow these steps:
-1. Register on the platform
-2. Specify your workforce demands
-3. Upload required scans & electronic documents
-4. Get real time updates & notifications
-5. Receive helping workforces
-
-
-**As an employee** you simply follow these steps:
-1. Register on the platform
-2. Specify your qualifications & preferences
-3. Get a list of up-to-date opportunities
-4. Choose the suiting options
-5. E-sign short-work contracts
-6. Help with your workforce
-
-
+We highly value any kind of feedback - technical or not technical.
+The easiest way to provide us feedback is to use our [🎁 feedback issue template](https://github.com/jgoerner/corona-hackathon/issues/new?assignees=&labels=%F0%9F%8E%81+feedback&template=feedback.md&title=Feedback).
 ## 🤓 Contact
 > Who are we?
 
