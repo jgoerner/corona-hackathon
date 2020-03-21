@@ -9,6 +9,8 @@ help:
 	@echo "	   Run tests with unittest framework."
 	@echo "make venv"
 	@echo "	   Create and update virtual environment."
+	@echo "make run"
+    @echo "	   Run application."
 
 .PHONY: venv
 venv: $(VENV_NAME)/bin/activate
@@ -23,6 +25,10 @@ $(VENV_NAME)/bin/activate: requirements.txt # if requirements.txt changed, this 
 .PHONY: test
 test: venv
 	$(PYTHON) -m unittest discover tests
+
+.PHONY: run
+run:
+	$(PYTHON) main.py
 
 .PHONY: clean
 clean:
