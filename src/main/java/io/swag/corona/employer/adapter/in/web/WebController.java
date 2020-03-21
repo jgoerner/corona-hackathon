@@ -1,4 +1,4 @@
-package io.swag.corona.employer.adapter.in;
+package io.swag.corona.employer.adapter.in.web;
 
 import io.swag.corona.employer.application.port.in.CreateEmployerUseCase;
 import io.swag.corona.employer.domain.Employer;
