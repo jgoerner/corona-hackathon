@@ -60,13 +60,11 @@ The **secret sauce** of SWA is a **benevolent artificial intelligence** that tri
 
 In order to make our solution approach a bit more tangible and down to earth, we are using [Domain Storytelling](https://domainstorytelling.org/).
 All user stories can be found in the [`./doc/user-stories/`](./doc/user-stories) folder.
-The following user stories are our main focus:
+The following domain story is our main focus:
 
-<details><summary>🙋‍♂️➡️🧰Volunteer Job Mathching </summary>
-<p>
-<img src="./doc/user-stories/img/user-job-matching_2020-03-20.png" style="width:80%" />
-</p>
-</details>
+⚠️ **As the domain story is visually packed, you might want to download the [`.dst`](./doc/user-stories/data/core-domain-story-2020-03-20.dst) file and replay the story using the [Domain Story Modeler](https://www.wps.de/modeler/).**
+
+<img src="./doc/user-stories/img/core-domain-story-2020-03-20.png" style="width:80%" />
 
 
 ## 📑 Technical Documentation
