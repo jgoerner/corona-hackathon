@@ -41,19 +41,31 @@ The current measures for short-time-work are **bureaucratic**, job agencies are 
 SWAG helps to mitigate this imbalance and directly connects employer and employees, building on the principles **ease of use**, **flexibility** & **optimized allocation**.
 
 ## 🧪 Unique Selling Point
-> What is unique about our approach
+> What is unique about our approach?
 
-#### - Credibility -
-SWAG is built & run in collaboration with federal agencies, making it as credible as the government itself.
-All users have  24hr the option to notify the administrators about suspicious behaviour or raise concers about certain incidents.
-SWAG tries to be as transparent as possible - a key driver in times of crisis.
+#### ⚡️ Batteries Included
+> SWAG is all you need!
 
-#### - Flexibility  -
-Both, employers and employees have the full freedom to specify their demands.
-Even though the recommendation built on an optimized allocation, every user can make his own decisions based on personal preferences.
+SWAG can be seen a one stop shop, support the whole process end to end.
+There is no need to install other tools or register on other webpages.
+To give just a few examples, SWAG includes...
+- ... an **integrated document scanner** to easily save high quality scans of important qualifications & certificates
+- ... **video chat** module to have a brief face to face conversation between employer & employee to clarify potential questions about the vacancies
+- ... an **e-signature** module to allow the unbureaucratic handling of all contract related documents
 
-#### - Optimized Allocation -
-The **secret sauce** of SWA is a **benevolent artificial intelligence** that tries to maximize the benefit for all parties (for further details of the problem domain you might want to take a look at [assignment problems](https://en.wikipedia.org/wiki/Assignment_problem) or [the adwords problem](http://infolab.stanford.edu/~ullman/mmds/ch8.pdf))
+#### 🚀 Dynamic Trend Monitoring
+> SWAG is more than a standard job portal!
+
+SWAG utilizes combination of location and job offerings to individualize the onboarding process for potential employees.
+If there is a specific demand in a certain region, SWAG will ask people who live in that region as well as ask new people who join SWAG about previous competencies on those topics.
+
+#### 🧠 Striving for a global equilibrium
+> SWAG is smart!
+
+SWAG is not only matching hard skill requirements. 
+By taking into account the niche skills of individuals and certain jobs, SWAG is striving for a global optimum when matching job opportunities.
+This does not mean that SWAG does not give you a choice.
+You can make your own decision, SWAG only supports you to pick the most beneficial one.
 
 ## 🦄 User Stories
 > What concrete user stories do we have in the current scope?
