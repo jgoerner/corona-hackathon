@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-welcome',
-  templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.scss']
+  templateUrl: './swag.component.html',
+  styleUrls: ['./swag.component.scss']
 })
-export class WelcomeComponent implements OnInit {
+export class SwagComponent implements OnInit {
 
   constructor() { }
 
