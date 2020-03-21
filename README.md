@@ -64,7 +64,7 @@ The following domain story is our main focus:
 
 ⚠️ **As the domain story is visually packed, you might want to download the [`.dst`](./doc/user-stories/data/core-domain-story-2020-03-20.dst) file and replay the story using the [Domain Story Modeler](https://www.wps.de/modeler/).**
 
-<img src="./doc/user-stories/img/core-domain-story-2020-03-20.png" style="width:80%" />
+<img src="./doc/user-stories/img/core-domain-story-with-bc-2020-03-20.png" style="width:80%" />
 
 
 ## 📑 Technical Documentation
