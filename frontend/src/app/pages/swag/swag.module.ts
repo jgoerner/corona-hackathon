@@ -13,10 +13,15 @@ import {CreateOfferComponent} from './offer/create-offer/create-offer.component'
 import {ListOffersComponent} from './offer/list-offers/list-offers.component';
 import {AccountComponent} from './account/account.component';
 import {ApinaModule} from '../../apina-api';
+import {BrowserModule} from "@angular/platform-browser";
+import {CommonModule} from "@angular/common";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
   imports: [
+    CommonModule,
+    ReactiveFormsModule,
     SwagRoutingModule,
     NgZorroAntdModule,
     ApinaModule

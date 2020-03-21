@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeProfileComponent implements OnInit {
 
+  index = 0;
+  disable = false;
+  size = 'large';
+
+  onIndexChange(index: number): void {
+    this.index = index;
+  }
+
   constructor() { }
 
   ngOnInit() {

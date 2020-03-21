@@ -1,1 +1,15 @@
-<p>employee-profile works!</p>
+<article nz-typography>
+  <h1 nz-title>CREATE PROFILE</h1>
+</article>
+
+<nz-steps nzDirection="horizontal" [nzCurrent]="index" (nzIndexChange)="onIndexChange($event)">
+  <nz-step nzTitle="Meta Data" nzDescription="Give information about age group, location and possible start time "></nz-step>
+  <nz-step nzTitle="Skills" nzDescription="Describe your skill set"></nz-step>
+</nz-steps>
+
+<br />
+
+<button nz-button nzType="primary" [nzSize]="size"><i nz-icon nzType="check"></i>Save</button>
+
+<button nz-button nzType="primary" [nzSize]="size"><i nz-icon nzType="thunderbolt"></i>Trigger Matching</button>
+<br />
