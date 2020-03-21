@@ -1,16 +1,27 @@
 package io.swag.corona.employer.application.service;
 
 import com.github.javafaker.Faker;
-import io.swag.corona.employer.application.port.in.CreateEmployerUseCase;
-import io.swag.corona.employer.application.port.in.GetEmployerUseCase;
-import io.swag.corona.employer.application.port.in.UpdateEmployerUseCase;
+import io.swag.corona.employer.application.port.in.*;
 import io.swag.corona.employer.domain.Employer;
+import io.swag.corona.employer.domain.Job;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @Component
-public class MockService implements CreateEmployerUseCase, GetEmployerUseCase, UpdateEmployerUseCase {
+public class MockService implements
+        CreateEmployerUseCase,
+        GetEmployerUseCase,
+        UpdateEmployerUseCase,
+        CreateJobUseCase,
+        GetJobUseCase,
+        GetJobsUseCase,
+        UpdateJobUseCase,
+        DeleteJobUseCase
+{
 
     private Faker faker;
 
@@ -44,5 +55,59 @@ public class MockService implements CreateEmployerUseCase, GetEmployerUseCase, U
                 name,
                 domain,
                 homepage);
+    }
+
+    @Override
+    public Job create(String title, String description, String location, Long qty, Long salary) {
+        return new Job(
+                faker.bothify("????-????-????-????"),
+                title,
+                description,
+                location,
+                qty,
+                salary
+        );
+    }
+
+    @Override
+    public void delete(String jobId) {
+        // do nothing :-)
+    }
+
+    @Override
+    public Job findById(String id) {
+        return new Job(
+                id,
+                faker.book().title(),
+                faker.shakespeare().romeoAndJulietQuote(),
+                faker.rickAndMorty().location(),
+                faker.number().numberBetween(0L, 10L),
+                faker.number().numberBetween(10L, 12L)
+        );
+    }
+
+    @Override
+    public List<Job> findAll() {
+        return IntStream.range(0, 10)
+                .mapToObj(x -> new Job(
+                        faker.bothify("????-????-????-????"),
+                        faker.book().title(),
+                        faker.shakespeare().romeoAndJulietQuote(),
+                        faker.rickAndMorty().location(),
+                        faker.number().numberBetween(0L, 10L),
+                        faker.number().numberBetween(10L, 12L)))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public Job update(String id, String title, String description, String location, Long qty, Long salary) {
+        return new Job(
+                id,
+                title,
+                description,
+                location,
+                qty,
+                salary
+        );
     }
 }
