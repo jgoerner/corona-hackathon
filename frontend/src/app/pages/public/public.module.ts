@@ -4,16 +4,18 @@ import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 import {PublicRoutingModule} from "./public-routing.module";
 import {NgZorroAntdModule} from "ng-zorro-antd";
-import {BrowserModule} from "@angular/platform-browser";
 import {ReactiveFormsModule} from "@angular/forms";
+import {ApinaModule} from '../../apina-api';
+import {CommonModule} from '@angular/common';
 
 
 @NgModule({
   imports: [
     PublicRoutingModule,
     NgZorroAntdModule,
-    BrowserModule,
-    ReactiveFormsModule
+    CommonModule,
+    ReactiveFormsModule,
+    ApinaModule
   ],
   exports: [],
   declarations: [

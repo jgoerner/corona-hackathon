@@ -1,11 +1,11 @@
-[nz-form] {
-  max-width: 600px;
+.register__container {
+  height: calc(100vh - 64px);
 }
 
-.phone-select {
-  width: 70px;
+.register-form {
+  max-width: 300px;
 }
 
-.register-are {
-  margin-bottom: 8px;
+.register-form-button {
+  width: 100%;
 }
