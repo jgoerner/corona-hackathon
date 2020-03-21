@@ -5,14 +5,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+$top-nav-height: 64px;
 .app-layout {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .top-logo {
+  .logo-heading {
+    padding-left: 12px;
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+  }
+
   position: relative;
   height: 64px;
-  padding-left: 24px;
   overflow: hidden;
   line-height: 64px;
   background: #001529;

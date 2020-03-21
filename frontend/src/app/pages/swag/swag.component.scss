@@ -1,5 +1,6 @@
+$top-nav-height: 64px;
 .app-layout {
-  height: 100vh;
+  min-height: calc(100vh - #{$top-nav-height});
 }
 
 .sider-menu {

@@ -1,6 +1,6 @@
 <nz-layout class="app-layout">
-  <nz-sider nzWidth="200px" nzTheme="dark">
-    <ul nz-menu nzMode="inline" class="sider-menu">
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" nzWidth="200px" nzTheme="dark">
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed" class="sider-menu">
       <li nz-menu-item
           routerLink="account"
           nzMatchRouterExact
