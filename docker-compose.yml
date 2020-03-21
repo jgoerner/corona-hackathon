@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+  backend:
+    image: swag-backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8081:8080
+  frontend:
+    image: swag-frontend
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    ports:
+      - 8080:80
+  matcher-ai:
+    image: swag-matcher-ai
+    build:
+      context: matcher-ai
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
