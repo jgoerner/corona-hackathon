@@ -4,20 +4,22 @@ import {SwagRoutingModule} from './swag-routing.module';
 
 import {SwagComponent} from './swag.component';
 import {NgZorroAntdModule} from "ng-zorro-antd";
-import { ContractComponent } from './contract/contract.component';
-import { EmployeeProfileComponent } from './find/employee-profile/employee-profile.component';
-import { MatchingComponent } from './find/matching/matching.component';
-import { ContractDetailComponent } from './contract/contract-detail/contract-detail.component';
-import { EmployerProfileComponent } from './offer/employer-profile/employer-profile.component';
-import { CreateOfferComponent } from './offer/create-offer/create-offer.component';
-import { ListOffersComponent } from './offer/list-offers/list-offers.component';
-import { AccountComponent } from './account/account.component';
+import {ContractComponent} from './contract/contract.component';
+import {EmployeeProfileComponent} from './find/employee-profile/employee-profile.component';
+import {MatchingComponent} from './find/matching/matching.component';
+import {ContractDetailComponent} from './contract/contract-detail/contract-detail.component';
+import {EmployerProfileComponent} from './offer/employer-profile/employer-profile.component';
+import {CreateOfferComponent} from './offer/create-offer/create-offer.component';
+import {ListOffersComponent} from './offer/list-offers/list-offers.component';
+import {AccountComponent} from './account/account.component';
+import {ApinaModule} from '../../apina-api';
 
 
 @NgModule({
   imports: [
     SwagRoutingModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    ApinaModule
   ],
   declarations: [SwagComponent, ContractComponent, EmployeeProfileComponent, MatchingComponent, ContractDetailComponent, EmployerProfileComponent, CreateOfferComponent, ListOffersComponent, AccountComponent],
   exports: [SwagComponent]

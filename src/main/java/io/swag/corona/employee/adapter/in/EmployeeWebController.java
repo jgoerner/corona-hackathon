@@ -19,7 +19,7 @@ public class EmployeeWebController {
     private UpdateEmployeeUseCase updateEmployeeUseCase;
 
     @RequestMapping(path = "/employee", method = RequestMethod.POST)
-    Employee create(
+    public Employee create(
             @RequestParam("name") String name,
             @RequestParam("ageGroup") String ageGroup,
             @RequestParam("location") String location,
@@ -29,12 +29,12 @@ public class EmployeeWebController {
     }
 
     @RequestMapping(path = "/employee/{id}", method = RequestMethod.GET)
-    Employee getById(@PathVariable("id") String id) {
+    public Employee getById(@PathVariable("id") String id) {
         return getEmployeeUseCase.getById(id);
     }
 
     @RequestMapping(path = "/employee/{id}", method = RequestMethod.PUT)
-    Employee update(
+    public Employee update(
             @PathVariable("id") String id,
             @RequestParam("name") String name,
             @RequestParam("ageGroup") String ageGroup,
@@ -45,7 +45,7 @@ public class EmployeeWebController {
     }
 
     @RequestMapping(path = "/employee/{id}", method = RequestMethod.DELETE)
-    void deleteById(@PathVariable("id") String id) {
+    public void deleteById(@PathVariable("id") String id) {
         deleteEmployeeUseCase.deleteById(id);
     }
 

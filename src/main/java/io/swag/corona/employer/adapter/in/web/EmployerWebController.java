@@ -17,7 +17,7 @@ public class EmployerWebController {
     private final UpdateEmployerUseCase updateEmployerUseCase;
 
     @RequestMapping(path = "/employer", method = RequestMethod.POST)
-    Employer create(
+    public Employer create(
             @RequestParam("name") String name,
             @RequestParam("domain") String domain,
             @RequestParam("homepage") String homepage) {
@@ -25,12 +25,12 @@ public class EmployerWebController {
     }
 
     @RequestMapping(path = "/employer/{id}", method = RequestMethod.GET)
-    Employer getById(@PathVariable("id") String id){
+    public Employer getById(@PathVariable("id") String id){
         return getEmployerUseCase.getById(id);
     }
 
     @RequestMapping(path = "/employer/{id}", method = RequestMethod.PUT)
-    Employer update(
+    public Employer update(
             @PathVariable("id") String id,
             @RequestParam("name") String name,
             @RequestParam("domain") String domain,

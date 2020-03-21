@@ -20,7 +20,7 @@ public class AccountController {
     private final ChangePasswordUseCase changePasswordUseCase;
 
     @RequestMapping(path = "/login", method = RequestMethod.POST)
-    boolean login(
+    public boolean login(
             @RequestParam("email") String email,
             @RequestParam("password") String password
     ){
@@ -28,7 +28,7 @@ public class AccountController {
     }
 
     @RequestMapping(path = "/register", method = RequestMethod.POST)
-    boolean register(
+    public boolean register(
             @RequestParam("email") String email,
             @RequestParam("password") String password
     ){
@@ -36,17 +36,17 @@ public class AccountController {
     }
 
     @RequestMapping(path = "/session", method = RequestMethod.GET)
-    boolean session(){
+    public boolean session(){
         return checkActiveSessionUseCase.hasActiveSession();
     }
 
     @RequestMapping(path = "/user", method = RequestMethod.GET)
-    Account activeAccount(){
+    public Account activeAccount(){
         return activeAccountUseCase.activeAccount();
     }
 
     @RequestMapping(path = "/user", method = RequestMethod.PUT)
-    Account changePassword(
+    public Account changePassword(
             @RequestParam("oldPassword") String oldPassword,
             @RequestParam("newPassword") String newPassword
     ) {
