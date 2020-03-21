@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/v1")
 @RequiredArgsConstructor
-public class WebController {
+public class EmployerController {
 
     private final CreateEmployerUseCase createEmployerUseCase;
 
