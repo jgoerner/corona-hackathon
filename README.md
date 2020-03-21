@@ -53,11 +53,12 @@ To give just a few examples, SWAG includes...
 - ... **video chat** module to have a brief face to face conversation between employer & employee to clarify potential questions about the vacancies
 - ... an **e-signature** module to allow the unbureaucratic handling of all contract related documents
 
-#### 🚀 Dynamic Trend Monitoring
+#### 📊 Dynamic Trend Monitoring
 > SWAG is more than a standard job portal!
 
 SWAG utilizes combination of location and job offerings to individualize the onboarding process for potential employees.
 If there is a specific demand in a certain region, SWAG will ask people who live in that region as well as ask new people who join SWAG about previous competencies on those topics.
+These trend information can also be used by 3rd party services like the job center.
 
 #### 🧠 Striving for a global equilibrium
 > SWAG is smart!
