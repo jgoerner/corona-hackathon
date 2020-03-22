@@ -5,9 +5,9 @@
 <nz-steps nzDirection="horizontal"
           [nzCurrent]="currentStepIndex"
           (nzIndexChange)="onIndexChange($event)">
-  <nz-step nzTitle="Info" nzDescription="Info"></nz-step>
-  <nz-step nzTitle="Fähigkeiten" nzDescription="Fähigkeiten"></nz-step>
-  <nz-step nzTitle="Geschafft!" nzStatus="Geschafft!" [nzIcon]="iconTemplate"></nz-step>
+  <nz-step nzTitle="Info"></nz-step>
+  <nz-step nzTitle="Fähigkeiten"></nz-step>
+  <nz-step nzTitle="Geschafft!" [nzIcon]="iconTemplate"></nz-step>
   <ng-template #iconTemplate><i nz-icon nzType="smile"></i></ng-template>
 </nz-steps>
 

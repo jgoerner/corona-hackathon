@@ -2,31 +2,32 @@
 <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
   <nz-form-item>
     <nz-form-label [nzSpan]="5" nzRequired nzFor="name">Firmenname</nz-form-label>
-    <nz-form-control [nzSpan]="12" nzErrorTip="Please input your username!">
+    <nz-form-control [nzSpan]="12" nzErrorTip="Bitte gib einen Firmennamen ein!">
       <input id="name" type="text" nz-input formControlName="name"/>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
     <nz-form-label [nzSpan]="5" nzFor="domain" nzRequired>Branche</nz-form-label>
-    <nz-form-control [nzSpan]="12" nzErrorTip="Please select your domain!">
+    <nz-form-control [nzSpan]="12" nzErrorTip="Bitte wähle eine Branche aus!">
       <nz-select
         id="domain"
         formControlName="domain"
-        nzPlaceHolder="Select option">
-        <nz-option nzValue="agriculture" nzLabel="agricultur"></nz-option>
-        <nz-option nzValue="supermarket" nzLabel="supermarket"></nz-option>
+        nzPlaceHolder="Option wählen">
+        <nz-option nzValue="agriculture" nzLabel="Landwirtschaft"></nz-option>
+        <nz-option nzValue="supermarket" nzLabel="Supermarkt"></nz-option>
+        <nz-option nzValue="logistics" nzLabel="Logistik"></nz-option>
       </nz-select>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
     <nz-form-label [nzSpan]="5" nzRequired nzFor="name">Homepage</nz-form-label>
-    <nz-form-control [nzSpan]="12" nzErrorTip="Please input your homepage!">
+    <nz-form-control [nzSpan]="12" nzErrorTip="Bitt gib eine Firmen-Homepage an!">
       <input id="homepage" type="text" nz-input formControlName="homepage"/>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
     <nz-form-control [nzSpan]="12" [nzOffset]="5">
-      <button nz-button nzType="primary">Submit</button>
+      <button nz-button nzType="primary">Anlegen</button>
     </nz-form-control>
   </nz-form-item>
 </form>
