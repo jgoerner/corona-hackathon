@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {AccountEndpoint} from '../../../shared/apina-api';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -11,7 +12,8 @@ export class RegisterComponent implements OnInit {
   validateForm: FormGroup;
 
   constructor(private fb: FormBuilder,
-              private accountEndpoint: AccountEndpoint) {
+              private accountEndpoint: AccountEndpoint,
+              private router: Router) {
   }
 
   submitForm(): void {
@@ -23,7 +25,7 @@ export class RegisterComponent implements OnInit {
       this.validateForm.get('email').value,
       this.validateForm.get('password').value
     ).subscribe((res) => {
-      console.log('works');
+      this.router.navigateByUrl('/login');
     });
   }
 

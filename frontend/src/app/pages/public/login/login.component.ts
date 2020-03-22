@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AccountEndpoint} from '../../../shared/apina-api';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {AuthService} from '../../../shared/auth.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private accountEndpoint: AccountEndpoint,
               private http: HttpClient,
-              private authService: AuthService) {
+              private authService: AuthService,
+              private router: Router) {
   }
 
   submitForm(): void {
@@ -35,6 +37,7 @@ export class LoginComponent implements OnInit {
     this.http.post("/api/v1/login", data, {headers})
       .subscribe((res) => {
         this.authService.reCheckIfSessionActive();
+        this.router.navigateByUrl("/swag");
       });
   }
 

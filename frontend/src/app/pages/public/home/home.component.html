@@ -1,20 +1,37 @@
 <nz-content>
   <div class="home__content">
     <h1 nz-title>Smart Workforce Allocator Germany (S.W.A.G.)</h1>
-    <h4 nz-title>Corona will kill us all...</h4>
+    <nz-row nzType="flex" nzAlign="middle" nzJustify="center">
+      <button nz-button nzType="primary" routerLink="/login">
+        <i nz-icon nzType="search"></i>Job finden
+      </button>
+      <button nz-button nzType="primary" routerLink="/login">
+        <i nz-icon nzType="pushpin"></i>Job anbieten
+      </button>
+    </nz-row>
   </div>
-  <nz-carousel nzDotPosition="right" nzAutoPlay>
+  <nz-carousel nzDotPosition="right"
+               nzAutoPlaySpeed="6000"
+               nzAutoPlay>
     <div nz-carousel-content
-         *ngFor="let src of carouselImages">
-      <div [style.backgroundImage]="'url('+ src +')'"
-           style="height: 400px; width:100%; background-position: center; background-repeat: no-repeat; background-size: cover;"
-      ></div>
+         *ngFor="let image of carouselImages">
+      <div class="home__carousel-text" nz-col>
+        <h1 nz-title>{{image.title}}</h1>
+        <p>{{image.text}}</p>
+      </div>
+      <div [style.backgroundImage]="'url('+ image.url +')'"
+           class="home__carousel">
+      </div>
     </div>
   </nz-carousel>
-  <button nz-button nzType="primary">
-    <i nz-icon nzType="search"></i>Find a Job!
-  </button>
-  <button nz-button nzType="primary">
-    <i nz-icon nzType="pushpin"></i>Offer a Job!
-  </button>
+  <nz-row class="home__footer" nzType="flex" nzAlign="middle" nzJustify="center">
+    <nz-col>
+      <nz-row>
+        <img src="assets/hackathon.jpg" height="64">
+      </nz-row>
+      <nz-row style="text-align: center; padding: 16px;">
+        S.W.A.G. ©2020
+      </nz-row>
+    </nz-col>
+  </nz-row>
 </nz-content>
