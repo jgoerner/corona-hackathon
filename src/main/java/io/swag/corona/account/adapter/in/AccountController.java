@@ -13,19 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class AccountController {
 
-    private final LogInUseCase logInUseCase;
     private final RegisterUseCase registerUseCase;
     private final CheckActiveSessionUseCase checkActiveSessionUseCase;
     private final FetchActiveAccountUseCase activeAccountUseCase;
     private final ChangePasswordUseCase changePasswordUseCase;
-
-    @RequestMapping(path = "/login", method = RequestMethod.POST)
-    public boolean login(
-            @RequestParam("email") String email,
-            @RequestParam("password") String password
-    ){
-        return logInUseCase.login(email, password);
-    }
 
     @RequestMapping(path = "/register", method = RequestMethod.POST)
     public boolean register(

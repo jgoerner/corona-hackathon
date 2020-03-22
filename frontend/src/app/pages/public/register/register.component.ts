@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {AccountEndpoint} from '../../../apina-api';
+import {AccountEndpoint} from '../../../shared/apina-api';
 
 @Component({
   selector: 'app-register',
@@ -18,13 +18,13 @@ export class RegisterComponent implements OnInit {
     for (const i in this.validateForm.controls) {
       this.validateForm.controls[i].markAsDirty();
       this.validateForm.controls[i].updateValueAndValidity();
-      this.accountEndpoint.register(
-        this.validateForm.get('email').value,
-        this.validateForm.get('password').value
-      ).subscribe((res) => {
-        console.log('works');
-      });
     }
+    this.accountEndpoint.register(
+      this.validateForm.get('email').value,
+      this.validateForm.get('password').value
+    ).subscribe((res) => {
+      console.log('works');
+    });
   }
 
   updateConfirmValidator(): void {
