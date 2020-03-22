@@ -51,6 +51,9 @@ public class EmployerService implements
     @Override
     public Employer currentEmployer() {
         var employeeId = getActiveEmployerId();
-        return getEmployerPort.getById(employeeId);
+        if (employeeId != null) {
+            return getEmployerPort.getById(employeeId);
+        }
+        return null;
     }
 }
