@@ -1,4 +1,7 @@
 package io.swag.corona.employee.application.port.in;
 
-public class GetCurrentEmployeeUseCase {
+import io.swag.corona.employee.domain.Employee;
+
+public interface GetCurrentEmployeeUseCase {
+    Employee currentEmployee();
 }

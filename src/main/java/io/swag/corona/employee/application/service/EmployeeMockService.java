@@ -1,22 +1,19 @@
 package io.swag.corona.employee.application.service;
 
 import com.github.javafaker.Faker;
-import io.swag.corona.employee.application.port.in.CreateEmployeeUseCase;
-import io.swag.corona.employee.application.port.in.DeleteEmployeeUseCase;
-import io.swag.corona.employee.application.port.in.GetEmployeeUseCase;
-import io.swag.corona.employee.application.port.in.UpdateEmployeeUseCase;
+import io.swag.corona.employee.application.port.in.*;
 import io.swag.corona.employee.domain.Employee;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
 @Component
-public class EmployeeMockService implements CreateEmployeeUseCase, DeleteEmployeeUseCase, GetEmployeeUseCase, UpdateEmployeeUseCase {
+public class EmployeeMockService implements CreateEmployeeUseCase, GetCurrentEmployeeUseCase, DeleteEmployeeUseCase, GetEmployeeUseCase, UpdateEmployeeUseCase {
 
     private Faker faker;
 
     @PostConstruct
-    void init(){
+    void init() {
         this.faker = new Faker();
     }
 
@@ -40,7 +37,7 @@ public class EmployeeMockService implements CreateEmployeeUseCase, DeleteEmploye
     public Employee getById(String id) {
 
         boolean[] skills = new boolean[5];
-        for(int i = 0; i < 5; i++) {
+        for (int i = 0; i < 5; i++) {
             skills[i] = faker.bool().bool();
         }
 
@@ -63,5 +60,15 @@ public class EmployeeMockService implements CreateEmployeeUseCase, DeleteEmploye
                 skills
         );
 
+    }
+
+    @Override
+    public Employee currentEmployee() {
+        return new Employee(
+                faker.bothify("??-??"),
+                faker.name().toString(),
+                faker.numerify("??-??"),
+                faker.numerify("?????"),
+                new boolean[]{});
     }
 }
