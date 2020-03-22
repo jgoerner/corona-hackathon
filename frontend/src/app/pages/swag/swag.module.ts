@@ -12,6 +12,11 @@ import {CreateOfferComponent} from './offer/create-offer/create-offer.component'
 import {ListOffersComponent} from './offer/list-offers/list-offers.component';
 import {AccountComponent} from './account/account.component';
 import {SharedModule} from '../../shared/shared.module';
+import { MetaFormComponent } from './find/employee-profile/meta-form/meta-form.component';
+import { SkillsFormComponent } from './find/employee-profile/skills-form/skills-form.component';
+import {EmployerMetaFormComponent} from "./offer/create-offer/employer-meta-form/employer-meta-form.component";
+import {EmployerSkillsFormComponent} from "./offer/create-offer/employer-skills-form/employer-skills-form.component";
+import { WelcomeFormComponent } from './offer/create-offer/welcome-form/welcome-form.component';
 
 
 @NgModule({
@@ -19,7 +24,7 @@ import {SharedModule} from '../../shared/shared.module';
     SharedModule,
     SwagRoutingModule,
   ],
-  declarations: [SwagComponent, ContractComponent, EmployeeProfileComponent, MatchingComponent, ContractDetailComponent, EmployerProfileComponent, CreateOfferComponent, ListOffersComponent, AccountComponent],
+  declarations: [SwagComponent, ContractComponent, EmployeeProfileComponent, MatchingComponent, ContractDetailComponent, EmployerProfileComponent, CreateOfferComponent, ListOffersComponent, AccountComponent, MetaFormComponent, SkillsFormComponent, EmployerMetaFormComponent, EmployerSkillsFormComponent, WelcomeFormComponent],
   exports: [SwagComponent]
 })
 export class SwagModule {

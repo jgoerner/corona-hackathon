@@ -6,11 +6,11 @@
           nzMatchRouterExact
           nzMatchRouter>
         <i nz-icon nzType="user"></i>
-        <span>User</span>
+        <span>Account</span>
       </li>
       <li nz-submenu
           nzOpen
-          nzTitle="Find Job"
+          nzTitle="Job finden"
           nzIcon="search">
         <ul>
           <li nz-menu-item
@@ -18,41 +18,47 @@
               nzMatchRouter
               routerLink="find/profile">
             <i nz-icon nzType="profile"></i>
-            <span>Profile</span>
+            <span>Mein Profil</span>
           </li>
           <li nz-menu-item
               nzMatchRouterExact
               nzMatchRouter
               routerLink="find/matching">
             <i nz-icon nzType="like"></i>
-            <span>Matching</span>
+            <span>Vermittlung</span>
           </li>
         </ul>
       </li>
       <li nz-submenu
           nzOpen
-          nzTitle="Offer Job"
+          nzTitle="Job anbieten"
           nzIcon="pushpin">
         <ul>
           <li nz-menu-item nzMatchRouterExact
               nzMatchRouter
               routerLink="offer/profile">
             <i nz-icon nzType="profile"></i>
-            <span>Profile</span>
+            <span>Firmenprofil</span>
           </li>
           <li nz-menu-item nzMatchRouterExact
               nzMatchRouter
               routerLink="offer/create">
             <i nz-icon nzType="plus"></i>
-            <span>New Offer</span>
+            <span>Neuer Job</span>
           </li>
           <li nz-menu-item nzMatchRouterExact
               nzMatchRouter
               routerLink="offer/list">
             <i nz-icon nzType="unordered-list"></i>
-            <span>My Offers</span>
+            <span>Meine Jobs</span>
           </li>
         </ul>
+      </li>
+      <li nz-menu-item
+          routerLink="contract"
+          nzMatchRouter>
+        <i nz-icon nzType="form"></i>
+        <span>Verträge</span>
       </li>
     </ul>
   </nz-sider>

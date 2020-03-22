@@ -1,22 +1,48 @@
 [nz-carousel-content] {
-  text-align: center;
-  height: 200px;
-  line-height: 160px;
+  text-align: left;
+  height: 400px;
   background: #000;
-  color: #fff;
   overflow: hidden;
-}
 
-h3 {
-  color: #fff;
+  .home__carousel-text {
+    position: absolute;
+    margin: 0;
+    padding: 16px;
+    z-index: 2;
+
+    h1, h2, h3, h4, p {
+      color: #ffffff;
+    }
+
+    p {
+      font-size: large;
+    }
+  }
+
+  .home__carousel {
+    position: relative;
+    z-index: 1;
+    height: 400px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-filter: opacity(.4);
+    filter: opacity(.4);
+  }
 }
 
 .home__content {
   padding: 16px;
+  text-align: center;
 }
 
 [nz-button] {
   margin-top: 8px;
   margin-right: 8px;
   margin-bottom: 12px;
+}
+
+.home__footer {
+  padding: 16px;
 }

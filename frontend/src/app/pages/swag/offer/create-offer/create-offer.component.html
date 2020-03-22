@@ -1,10 +1,31 @@
 <article nz-typography>
-  <h1 nz-title>CREATE NEW OFFER</h1>
+  <h1 nz-title>Neuen Job anlegen</h1>
 </article>
 
-<nz-steps nzDirection="horizontal" [nzCurrent]="index" (nzIndexChange)="onIndexChange($event)">
-  <nz-step nzTitle="Meta Data" nzDescription="Give information about Job Location, Job Title, Stating Time and Salary"></nz-step>
-  <nz-step nzTitle="Skills" nzDescription="Describe the required skill set"></nz-step>
-  <nz-step nzTitle="Welcome Info" nzDescription="Give the new employee useful information that is required for having an amazing first day which all information and possible equipement needed"></nz-step>
+<nz-steps nzDirection="horizontal"
+          [nzCurrent]="currentStepIndex">
+  <nz-step nzTitle="Info"></nz-step>
+  <nz-step nzTitle="Fähigkeiten"></nz-step>
+  <nz-step nzTitle="Willkommenspaket"></nz-step>
 </nz-steps>
+
+<div class="create-offer__steps-content"
+     [ngSwitch]="currentStepIndex">
+  <app-employer-meta-form *ngSwitchCase="0" [(job)]="job"></app-employer-meta-form>
+  <app-employer-skills-form *ngSwitchCase="1" [job]="job"></app-employer-skills-form>
+  <app-welcome-form *ngSwitchCase="2" [job]="job"></app-welcome-form>
+</div>
+
+<div class="create-offer__steps-action">
+  <button nz-button nzType="default" (click)="onIndexChange(currentStepIndex - 1)" *ngIf="currentStepIndex > 0">
+    <span>Zurück</span>
+  </button>
+  <button nz-button
+          nzType="default"
+          [disabled]="!job"
+          (click)="onIndexChange(currentStepIndex + 1)" *ngIf="currentStepIndex < 2">
+    <span>Weiter</span>
+  </button>
+</div>
+
 

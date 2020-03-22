@@ -1,0 +1,36 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5" nzRequired nzFor="nameField">Name</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzErrorTip="Bitte gib einen Namen an!">
+      <input id="nameField" type="text" nz-input formControlName="name" placeholder="Name eingeben"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5" nzFor="description" nzRequired>Beschreibung</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzErrorTip="Bitte gib eine Beschreibung an!">
+      <textarea nz-input formControlName="description" placeholder="Beschreibung eingeben" rows="4"></textarea>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5" nzRequired nzFor="location">Postleitzahl</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzErrorTip="Bitte gib die Postleitzahl des Einsatzortes an!">
+      <input id="location" type="text" nz-input formControlName="location" placeholder="Postleitzahl eingeben"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5" nzRequired nzFor="salary">Lohn [€/h]</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzErrorTip="Bitte gib einen gültigen Lohn der Einheit [€/h] ein!">
+      <input id="salary" type="number" nz-input formControlName="salary" placeholder="Lohn eingeben"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5" nzRequired nzFor="quantity">Freie Stellen</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzErrorTip="Bitte gib die Anzahl an freien Stellen in diesem Job an!">
+      <input id="quantity" type="number" nz-input formControlName="quantity"
+             placeholder="Anzahl freie Stellen eingeben"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <button nz-button [nzType]="'primary'">Speichern</button>
+  </nz-form-item>
+</form>

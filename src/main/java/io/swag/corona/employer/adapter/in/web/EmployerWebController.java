@@ -1,6 +1,7 @@
 package io.swag.corona.employer.adapter.in.web;
 
 import io.swag.corona.employer.application.port.in.CreateEmployerUseCase;
+import io.swag.corona.employer.application.port.in.GetCurrentEmployerUseCase;
 import io.swag.corona.employer.application.port.in.GetEmployerUseCase;
 import io.swag.corona.employer.application.port.in.UpdateEmployerUseCase;
 import io.swag.corona.employer.domain.Employer;
@@ -14,6 +15,7 @@ public class EmployerWebController {
 
     private final CreateEmployerUseCase createEmployerUseCase;
     private final GetEmployerUseCase getEmployerUseCase;
+    private final GetCurrentEmployerUseCase getCurrentEmployerUseCase;
     private final UpdateEmployerUseCase updateEmployerUseCase;
 
     @RequestMapping(path = "/employer", method = RequestMethod.POST)
@@ -25,8 +27,13 @@ public class EmployerWebController {
     }
 
     @RequestMapping(path = "/employer/{id}", method = RequestMethod.GET)
-    public Employer getById(@PathVariable("id") String id){
+    public Employer getById(@PathVariable("id") String id) {
         return getEmployerUseCase.getById(id);
+    }
+
+    @RequestMapping(path = "/employer/me", method = RequestMethod.GET)
+    public Employer getCurrent() {
+        return getCurrentEmployerUseCase.currentEmployer();
     }
 
     @RequestMapping(path = "/employer/{id}", method = RequestMethod.PUT)

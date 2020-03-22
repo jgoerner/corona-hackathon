@@ -25,6 +25,10 @@ public class JobJPA {
     String location;
     Long qty;
     Long salary;
+    boolean germanSkill;
+    boolean englishSkill;
+    boolean licenseSkill;
+    boolean studentSkill;
 
     static JobJPA of(Job j) {
         return new JobJPA(
@@ -33,11 +37,15 @@ public class JobJPA {
                 j.getDescription(),
                 j.getLocation(),
                 j.getQty(),
-                j.getSalary()
+                j.getSalary(),
+                j.isGermanSkill(),
+                j.isEnglishSkill(),
+                j.isLicenseSkill(),
+                j.isStudentSkill()
         );
     }
 
-    Job toDomain(){
-        return new Job(this.id, this.title, this.description, this.location, this.qty, this.salary);
+    Job toDomain() {
+        return new Job(this.id, this.title, this.description, this.location, this.qty, this.salary, this.germanSkill, this.englishSkill, this.licenseSkill, this.studentSkill);
     }
 }

@@ -1,22 +1,20 @@
-<h1 nz-title>MY ACTIVE OFFERS</h1>
-<nz-table #basicTable [nzData]="listOfData">
+<h1 nz-title>Meine Jobs</h1>
+<nz-table #basicTable [nzData]="jobs">
   <thead>
   <tr>
-    <th>Company</th>
-    <th>Title</th>
-    <th>Location</th>
-    <th>Action</th>
+    <th>Job-Bezeichnung</th>
+    <th>Ort</th>
+    <th>Aktion</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let data of basicTable.data">
-    <td>{{ data.company }}</td>
     <td>{{ data.title }}</td>
     <td>{{ data.location }}</td>
     <td>
-      <a>edit</a>
+      <a>bearbeiten</a>
       <nz-divider nzType="vertical"></nz-divider>
-      <a>delete</a>
+      <a>löschen</a>
     </td>
   </tr>
   </tbody>

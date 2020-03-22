@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Job} from "../../../../shared/apina-api";
 
 @Component({
   selector: 'app-create-offer',
@@ -7,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateOfferComponent implements OnInit {
 
-  index = 0;
-  disable = false;
-  onIndexChange(index: number): void {
-    this.index = index;
+  currentStepIndex = 0;
+  job: Job;
+
+  constructor() {
   }
 
-  constructor() { }
+  onIndexChange(index: number): void {
+    this.currentStepIndex = index;
+  }
 
   ngOnInit() {
   }

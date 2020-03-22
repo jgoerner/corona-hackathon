@@ -11,5 +11,9 @@ public class Job {
     String location;
     Long qty;
     Long salary;
-    
+    boolean germanSkill;
+    boolean englishSkill;
+    boolean licenseSkill;
+    boolean studentSkill;
+
 }

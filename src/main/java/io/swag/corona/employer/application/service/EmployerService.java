@@ -1,8 +1,8 @@
 package io.swag.corona.employer.application.service;
 
-import io.swag.corona.employer.application.port.in.CreateEmployerUseCase;
-import io.swag.corona.employer.application.port.in.GetEmployerUseCase;
-import io.swag.corona.employer.application.port.in.UpdateEmployerUseCase;
+import io.swag.corona.account.application.port.in.FetchActiveAccountUseCase;
+import io.swag.corona.employer.application.port.in.*;
+import io.swag.corona.employer.application.port.out.GetEmployerIdByAccountIdPort;
 import io.swag.corona.employer.application.port.out.GetEmployerPort;
 import io.swag.corona.employer.application.port.out.SaveEmployerPort;
 import io.swag.corona.employer.domain.Employer;
@@ -15,16 +15,20 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class EmployerService implements
         CreateEmployerUseCase,
+        GetCurrentEmployerUseCase,
+        GetActiveEmployerIdUseCase,
         GetEmployerUseCase,
-        UpdateEmployerUseCase
-{
+        UpdateEmployerUseCase {
 
+    private final FetchActiveAccountUseCase fetchActiveAccountUseCase;
     private final SaveEmployerPort saveEmployerPort;
+    private final GetEmployerIdByAccountIdPort getEmployerIdByAccountIdPort;
     private final GetEmployerPort getEmployerPort;
 
     @Override
     public Employer create(String name, String domain, String homepage) {
-        return saveEmployerPort.save(new Employer("", name, domain, homepage));
+        var accountId = fetchActiveAccountUseCase.activeAccount().getId();
+        return saveEmployerPort.save(new Employer("", name, domain, homepage), accountId);
     }
 
     @Override
@@ -34,6 +38,22 @@ public class EmployerService implements
 
     @Override
     public Employer update(String id, String name, String domain, String homepage) {
-        return saveEmployerPort.save(new Employer(id, name, domain, homepage));
+        var accountId = fetchActiveAccountUseCase.activeAccount().getId();
+        return saveEmployerPort.save(new Employer(id, name, domain, homepage), accountId);
+    }
+
+    @Override
+    public String getActiveEmployerId() {
+        var activeAccountId = fetchActiveAccountUseCase.activeAccount().getId();
+        return getEmployerIdByAccountIdPort.findByAccountId(activeAccountId);
+    }
+
+    @Override
+    public Employer currentEmployer() {
+        var employeeId = getActiveEmployerId();
+        if (employeeId != null) {
+            return getEmployerPort.getById(employeeId);
+        }
+        return null;
     }
 }

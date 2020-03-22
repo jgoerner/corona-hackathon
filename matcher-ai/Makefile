@@ -10,7 +10,7 @@ help:
 	@echo "make venv"
 	@echo "	   Create and update virtual environment."
 	@echo "make run"
-    @echo "	   Run application."
+	@echo "	   Run application."
 
 .PHONY: venv
 venv: $(VENV_NAME)/bin/activate

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Account, AccountEndpoint} from "../../../shared/apina-api";
 
 @Component({
   selector: 'app-account',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountComponent implements OnInit {
 
-  constructor() { }
+  account: Account;
+
+  constructor(private accountEndpoint: AccountEndpoint) {
+    this.accountEndpoint.activeAccount()
+      .subscribe((account) => {
+        this.account = account;
+      });
+  }
 
   ngOnInit() {
   }

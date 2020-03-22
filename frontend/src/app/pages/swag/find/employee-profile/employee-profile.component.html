@@ -1,61 +1,38 @@
 <article nz-typography>
-  <h1 nz-title>CREATE PROFILE</h1>
+  <h1 nz-title>Bewerbungsprofil</h1>
 </article>
 
-<nz-steps nzDirection="horizontal" [nzCurrent]="current">
-  <nz-step nzTitle="Meta Data" nzDescription="Basic Information"></nz-step>
-  <nz-step nzTitle="Skills" nzDescription="Detailed information"></nz-step>
-  <nz-step nzTitle="Done" nzStatus="wait" [nzIcon]="iconTemplate"></nz-step>
+<nz-steps nzDirection="horizontal"
+          [nzCurrent]="currentStepIndex">
+  <nz-step nzTitle="Info"></nz-step>
+  <nz-step nzTitle="Fähigkeiten"></nz-step>
+  <nz-step nzTitle="Geschafft!" [nzIcon]="iconTemplate"></nz-step>
   <ng-template #iconTemplate><i nz-icon nzType="smile"></i></ng-template>
 </nz-steps>
-<div class="steps-content">{{ index }}</div>
 
-<div class="steps-action">
-  <button nz-button nzType="default" (click)="pre()" *ngIf="current > 0">
-    <span>Previous</span>
+<div class="employee-profile__steps-content"
+     [ngSwitch]="currentStepIndex">
+  <app-meta-form *ngSwitchCase="0"></app-meta-form>
+  <app-skills-form *ngSwitchCase="1"></app-skills-form>
+  <div *ngSwitchCase="2">
+    <nz-col>
+      <nz-row>
+        <h1>Herzlichen Glückwunsch!</h1>
+      </nz-row>
+      <nz-row>
+        <button nz-button nzType="primary" nzSize="large"><i nz-icon nzType="check"></i>Jobsuche starten</button>
+      </nz-row>
+    </nz-col>
+  </div>
+</div>
+
+<div class="employee-profile__steps-action">
+  <button nz-button nzType="default" (click)="onIndexChange(currentStepIndex - 1)" *ngIf="currentStepIndex > 0">
+    <span>Zurück</span>
   </button>
-  <button nz-button nzType="default" (click)="next()" *ngIf="current < 2">
-    <span>Next</span>
+  <button nz-button nzType="default" (click)="onIndexChange(currentStepIndex + 1)" *ngIf="currentStepIndex < 2">
+    <span>Weiter</span>
   </button>
 </div>
 
-<br/>
-
-<button nz-button nzType="primary" nzSize="large"><i nz-icon nzType="check"></i>Save</button>
-
-<button nz-button nzType="primary" nzSize="large"><i nz-icon nzType="thunderbolt"></i>Trigger Matching</button>
-<br/>
-
-<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
-  <nz-form-item>
-    <nz-form-label [nzSpan]="5" nzFor="Age Group" nzRequired>Age Group</nz-form-label>
-    <nz-form-control [nzSpan]="12" nzErrorTip="Please select your age group!">
-      <nz-select
-        id="age"
-        formControlName="age"
-        nzPlaceHolder="Select option"
-      >
-        <nz-option nzValue="youth" nzLabel="16-18"></nz-option>
-        <nz-option nzValue="young" nzLabel="18-35"></nz-option>
-        <nz-option nzValue="adult" nzLabel="35-60"></nz-option>
-        <nz-option nzValue="old" nzLabel=">60"></nz-option>
-      </nz-select>
-    </nz-form-control>
-  </nz-form-item>
-  <nz-form-item>
-    <nz-form-label [nzSpan]="5" nzRequired nzFor="location">Location</nz-form-label>
-    <nz-form-control [nzSpan]="12" nzErrorTip="Please type in the zip code of your home location!">
-      <input id="location" type="text" nz-input formControlName="location" placeholder="Enter zip code"/>
-    </nz-form-control>
-  </nz-form-item>
-  <nz-form-item>
-    <nz-form-label [nzSpan]="5" nzRequired nzFor="location">Start Date</nz-form-label>
-    <nz-date-picker
-      [nzMode]="dateMode"
-      nzShowTime
-      (nzOnOpenChange)="handleDateOpenChange($event)"
-      (nzOnPanelChange)="handleDatePanelChange($event)">
-    </nz-date-picker>
-  </nz-form-item>
-</form>
 

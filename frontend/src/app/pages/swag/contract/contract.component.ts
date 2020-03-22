@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Contract} from "../../../shared/apina-api";
 
 @Component({
   selector: 'app-contract',
@@ -6,8 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contract.component.scss']
 })
 export class ContractComponent implements OnInit {
+  contracts: Contract[] = [
+    {
+      id: null,
+      employeeId: null,
+      jobId: null,
+      signed: false,
+      timestamp: new Date(),
+      videoVerified: false
+    },
+    {
+      id: null,
+      employeeId: null,
+      jobId: null,
+      signed: false,
+      timestamp: new Date(),
+      videoVerified: false
+    }
+  ];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
