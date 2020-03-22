@@ -1,17 +1,41 @@
-<article nz-typography>
-  <h1 nz-title>Hi User!</h1>
-  <h2 nz-title>
-    get ready.... FIGHT CORONA!
-  </h2>
-  <p nz-paragraph>
-    Some lost their jobs, some are in serious need of people to run their business...
-    <span nz-text
-    >
-      <hr>
-      <i nz-icon nzType="notification" nzTheme="fill"></i><strong
-    >Get your hands dirty and help! OR : Ask the community for their support and offer a job!</strong
-    ></span
-    >.
-</article>
+<nz-content *ngIf="account" class="account__container">
+  <h1 nz-title>Willkommen {{account.email}}!</h1>
+  <p>
+    Lass uns gemeinsam das Coronavirus besiegen!
+    Dafür benötigen wir deine Unterstützung.
+    Nutze das Menü links, um einen Job zu finden oder selbst einen Job anzubieten.
+    Die Abwicklung wird von uns so weit wie möglich vereinfacht. Das Ziel ist, dass möglichst viele Menschen, die
+    kurzfristig arbeitslos sind schnell und unkompliziert an Unternehmen, die dringend Mitarbeiter:innen benötigen,
+    vermittelt werden können.
+    <b>Let's do it!</b>
+  </p>
+  <nz-row nzType="flex" nzJustify="center" nzAlign="middle">
+    <img src="https://media1.giphy.com/media/11zN7c38FIKa4M/giphy.gif" alt="gif" width="256">
+  </nz-row>
+
+  <nz-row nzType="flex" nzJustify="center" nzAlign="middle">
+    <form nz-form class="account__form">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your Password!">
+          <nz-input-group nzPrefixIcon="lock">
+            <input type="password" nz-input placeholder="Altes Passwort"/>
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your Password!">
+          <nz-input-group nzPrefixIcon="lock">
+            <input type="password" nz-input placeholder="Neues Passwort"/>
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <button nz-button [nzType]="'primary'">Passwort ändern</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </nz-row>
+</nz-content>
 
 
