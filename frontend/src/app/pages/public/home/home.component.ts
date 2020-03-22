@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-home',
@@ -13,7 +12,7 @@ export class HomeComponent implements OnInit {
     'assets/logistics.jpeg',
   ];
 
-  constructor(public sanitizer: DomSanitizer) {
+  constructor() {
   }
 
   ngOnInit() {

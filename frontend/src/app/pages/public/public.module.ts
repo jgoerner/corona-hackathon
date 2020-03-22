@@ -3,15 +3,13 @@ import {HomeComponent} from "./home/home.component";
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 import {PublicRoutingModule} from "./public-routing.module";
-import {NgZorroAntdModule} from "ng-zorro-antd";
-import {BrowserModule} from "@angular/platform-browser";
+import {SharedModule} from '../../shared/shared.module';
 
 
 @NgModule({
   imports: [
     PublicRoutingModule,
-    NgZorroAntdModule,
-    BrowserModule
+    SharedModule
   ],
   exports: [],
   declarations: [

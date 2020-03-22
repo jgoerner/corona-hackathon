@@ -19,7 +19,7 @@ public class JobWebController {
     private final UpdateJobUseCase updateJobUseCase;
 
     @RequestMapping(path = "/job", method = RequestMethod.POST)
-    Job create(
+    public Job create(
             @RequestParam("title") String title,
             @RequestParam("descr") String description,
             @RequestParam("location") String location,
@@ -36,17 +36,17 @@ public class JobWebController {
     }
 
     @RequestMapping(path  = "/job", method = RequestMethod.GET)
-    List<Job> findAll(){
+    public List<Job> findAll(){
         return getJobsUseCase.findAll();
     }
 
     @RequestMapping(path = "/job/{id}", method = RequestMethod.GET)
-    Job findById(@PathVariable("id") String id) {
+    public Job findById(@PathVariable("id") String id) {
         return getJobUseCase.findById(id);
     }
 
     @RequestMapping(path = "/job/{id}", method = RequestMethod.PUT)
-    Job update(
+    public Job update(
             @PathVariable("id") String id,
             @RequestParam("title") String title,
             @RequestParam("descr") String description,
@@ -65,7 +65,7 @@ public class JobWebController {
     }
 
     @RequestMapping(path = "/job/{id}", method = RequestMethod.DELETE)
-    void delete(String jobId) {
+    public void delete(String jobId) {
         deleteJobUseCase.delete(jobId);
     }
 }

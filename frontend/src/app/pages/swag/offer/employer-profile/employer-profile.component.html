@@ -1,1 +1,33 @@
-<p>employer-profile works!</p>
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5" nzRequired nzFor="name">Company Name</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzErrorTip="Please input your username!">
+      <input id="name" type="text" nz-input formControlName="name" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5" nzFor="domain" nzRequired>Domain</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzErrorTip="Please select your domain!">
+      <nz-select
+        id="domain"
+        formControlName="domain"
+        nzPlaceHolder="Select option"
+      >
+        <nz-option nzValue="agriculture" nzLabel="agricultur"></nz-option>
+        <nz-option nzValue="supermarket" nzLabel="supermarket"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5" nzRequired nzFor="name">Homepage</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzErrorTip="Please input your homepage!">
+      <input id="homepage" type="text" nz-input formControlName="homepage" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control [nzSpan]="12" [nzOffset]="5">
+      <button nz-button nzType="primary">Submit</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
+`,

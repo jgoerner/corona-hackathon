@@ -18,7 +18,7 @@ public class AllocatorWebController  {
     private final MatchJobsUseCase matchJobsUseCase;
 
     @RequestMapping(path = "/matches", method = RequestMethod.GET)
-    List<JobRecommendation> findMatchesById(@RequestParam("id") String employeeId) {
+    public List<JobRecommendation> findMatchesById(@RequestParam("id") String employeeId) {
         return matchJobsUseCase.match(employeeId);
     }
 

@@ -1,13 +1,19 @@
 package io.swag.corona.account.domain;
 
-import lombok.Value;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Value
+@AllArgsConstructor
+@NoArgsConstructor
+@Setter
+@Getter
 public class Account {
 
+    String id;
     String email;
     String password;
-    String employeeId;
-    String employerId;
+    String role;
 
 }

@@ -1,1 +1,23 @@
-<p>matching works!</p>
+<h1 nz-title>MY JOB MATCHINGS</h1>
+<nz-table #basicTable [nzData]="listOfData">
+  <thead>
+  <tr>
+    <th>Company</th>
+    <th>Title</th>
+    <th>Location</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of basicTable.data">
+    <td>{{ data.company }}</td>
+    <td>{{ data.title }}</td>
+    <td>{{ data.location }}</td>
+    <td>
+      <a>accept</a>
+      <nz-divider nzType="vertical"></nz-divider>
+      <a>reject</a>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>

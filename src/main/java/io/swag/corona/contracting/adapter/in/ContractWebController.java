@@ -21,24 +21,24 @@ public class ContractWebController {
     private final UpdateContractUseCase updateContractUseCase;
 
     @RequestMapping(path = "/job/{jobId}/contract", method = RequestMethod.POST)
-    Contract create(@PathVariable("jobId") String jobId) {
+    public Contract create(@PathVariable("jobId") String jobId) {
         return createContractUseCase.create(jobId);
     }
 
     @RequestMapping(path = "/job/{jobId}/contract", method = RequestMethod.GET)
-    List<Contract> findAll(@PathVariable("jobId") String jobId) {
+    public List<Contract> findAll(@PathVariable("jobId") String jobId) {
         return findContractsByJobUseCase.findAll(jobId);
     }
 
     @RequestMapping(path = "/job/{jobId}/contract/{contractId}", method = RequestMethod.GET)
-    Contract findById(
+    public Contract findById(
             @PathVariable("jobId") String jobId,
             @PathVariable("contractId") String contractId) {
         return findContractByJobUseCase.findById(jobId, contractId);
     }
 
     @RequestMapping(path = "/job/{jobId}/contract/{contractId}", method = RequestMethod.PUT)
-    Contract update(
+    public Contract update(
             @PathVariable("jobId") String jobId,
             @PathVariable("contractId") String contractId,
             @RequestParam("signed") boolean signed,

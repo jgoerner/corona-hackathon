@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class PostgresAdapter implements SaveEmployerPort {
+public class EmployerPostgresAdapter implements SaveEmployerPort {
 
     private final EmployerJPARepository repository;
 
