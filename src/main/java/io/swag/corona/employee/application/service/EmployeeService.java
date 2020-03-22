@@ -18,9 +18,9 @@ public class EmployeeService implements
         CreateEmployeeUseCase,
         DeleteEmployeeUseCase,
         GetEmployeeUseCase,
+        GetCurrentEmployeeUseCase,
         UpdateEmployeeUseCase,
-        GetActiveEmployeeIdUseCase
-{
+        GetActiveEmployeeIdUseCase {
 
     private final SaveEmployeePort saveEmployeePort;
     private final DeleteEmployeePort deleteEmployeePort;
@@ -29,9 +29,9 @@ public class EmployeeService implements
     private final GetEmployeeIdByAccountIdPort getEmployeeIdByAccountIdPort;
 
     @Override
-    public Employee create(String name, String ageGroup, String location, boolean[] skills) {
+    public Employee create(String name, String ageGroup, String location, boolean germanSkill, boolean englishSkill, boolean licenseSkill, boolean studentSkill) {
         var activeAccountId = fetchActiveAccountUseCase.activeAccount().getId();
-        return saveEmployeePort.save(new Employee(null, name, ageGroup, location, skills), activeAccountId);
+        return saveEmployeePort.save(new Employee(null, name, ageGroup, location, germanSkill, englishSkill, licenseSkill, studentSkill), activeAccountId);
     }
 
     @Override
@@ -45,14 +45,20 @@ public class EmployeeService implements
     }
 
     @Override
-    public Employee updateEmployee(String id, String name, String ageGroup, String location, boolean[] skills) {
+    public Employee updateEmployee(String id, String name, String ageGroup, String location, boolean germanSkill, boolean englishSkill, boolean licenseSkill, boolean studentSkill) {
         var activeAccountId = fetchActiveAccountUseCase.activeAccount().getId();
-        return saveEmployeePort.save(new Employee(id, name, ageGroup, location, skills),activeAccountId);
+        return saveEmployeePort.save(new Employee(id, name, ageGroup, location, germanSkill, englishSkill, licenseSkill, studentSkill), activeAccountId);
     }
 
     @Override
     public String getActiveEmployeeId() {
         var activeAccountId = fetchActiveAccountUseCase.activeAccount().getId();
         return getEmployeeIdByAccountIdPort.findByAccountId(activeAccountId);
+    }
+
+    @Override
+    public Employee currentEmployee() {
+        var employeeId = getActiveEmployeeId();
+        return getEmployeePort.getById(employeeId);
     }
 }

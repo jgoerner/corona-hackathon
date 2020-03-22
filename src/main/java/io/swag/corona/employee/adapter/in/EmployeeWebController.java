@@ -21,9 +21,12 @@ public class EmployeeWebController {
             @RequestParam("name") String name,
             @RequestParam("ageGroup") String ageGroup,
             @RequestParam("location") String location,
-            @RequestParam("skills") boolean[] skills
+            @RequestParam("germanSkill") boolean germanSkill,
+            @RequestParam("englishSkill") boolean englishSkill,
+            @RequestParam("licenseSkill") boolean licenseSkill,
+            @RequestParam("studentSkill") boolean studentSkill
     ) {
-        return createEmployeeUseCase.create(name, ageGroup, location, skills);
+        return createEmployeeUseCase.create(name, ageGroup, location, germanSkill, englishSkill, licenseSkill, studentSkill);
     }
 
     @RequestMapping(path = "/employee/me", method = RequestMethod.GET)
@@ -43,9 +46,12 @@ public class EmployeeWebController {
             @RequestParam("name") String name,
             @RequestParam("ageGroup") String ageGroup,
             @RequestParam("location") String location,
-            @RequestParam("skills") boolean[] skills
+            @RequestParam("germanSkill") boolean germanSkill,
+            @RequestParam("englishSkill") boolean englishSkill,
+            @RequestParam("licenseSkill") boolean licenseSkill,
+            @RequestParam("studentSkill") boolean studentSkill
     ) {
-        return updateEmployeeUseCase.updateEmployee(id, name, ageGroup, location, skills);
+        return updateEmployeeUseCase.updateEmployee(id, name, ageGroup, location, germanSkill, englishSkill, licenseSkill, studentSkill);
     }
 
     @RequestMapping(path = "/employee/{id}", method = RequestMethod.DELETE)

@@ -9,6 +9,9 @@ public class Employee {
     String name;
     String ageGroup;
     String location;
-    boolean[] skill;
+    boolean germanSkill;
+    boolean englishSkill;
+    boolean licenseSkill;
+    boolean studentSkill;
 
 }

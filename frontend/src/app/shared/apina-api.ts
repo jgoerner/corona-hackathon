@@ -28,10 +28,13 @@ export interface Contract {
 
 export interface Employee {
     ageGroup: string;
+    englishSkill: boolean;
+    germanSkill: boolean;
     id: string;
+    licenseSkill: boolean;
     location: string;
     name: string;
-    skill: boolean[];
+    studentSkill: boolean;
 }
 
 export interface Employer {
@@ -78,10 +81,13 @@ export function registerDefaultSerializers(config: ApinaConfig) {
 
     config.registerClassSerializer('Employee', {
         'ageGroup': 'string',
+        'englishSkill': 'boolean',
+        'germanSkill': 'boolean',
         'id': 'string',
+        'licenseSkill': 'boolean',
         'location': 'string',
         'name': 'string',
-        'skill': 'boolean[]'
+        'studentSkill': 'boolean'
     });
 
     config.registerClassSerializer('Employer', {
@@ -463,7 +469,7 @@ export class EmployeeWebEndpoint {
     constructor(private context: ApinaEndpointContext) {
     }
 
-    create(name: string, ageGroup: string, location: string, skills: boolean[]): Observable<Employee> {
+    create(name: string, ageGroup: string, location: string, germanSkill: boolean, englishSkill: boolean, licenseSkill: boolean, studentSkill: boolean): Observable<Employee> {
         return this.context.request({
             'uriTemplate': '/api/v1/employee',
             'method': 'POST',
@@ -471,7 +477,10 @@ export class EmployeeWebEndpoint {
                 'name': this.context.serialize(name, 'string'),
                 'ageGroup': this.context.serialize(ageGroup, 'string'),
                 'location': this.context.serialize(location, 'string'),
-                'skills': this.context.serialize(skills, 'boolean[]')
+                'germanSkill': this.context.serialize(germanSkill, 'boolean'),
+                'englishSkill': this.context.serialize(englishSkill, 'boolean'),
+                'licenseSkill': this.context.serialize(licenseSkill, 'boolean'),
+                'studentSkill': this.context.serialize(studentSkill, 'boolean')
             },
             'responseType': 'Employee'
         });
@@ -506,7 +515,7 @@ export class EmployeeWebEndpoint {
         });
     }
 
-    update(id: string, name: string, ageGroup: string, location: string, skills: boolean[]): Observable<Employee> {
+    update(id: string, name: string, ageGroup: string, location: string, germanSkill: boolean, englishSkill: boolean, licenseSkill: boolean, studentSkill: boolean): Observable<Employee> {
         return this.context.request({
             'uriTemplate': '/api/v1/employee/{id}',
             'method': 'PUT',
@@ -517,7 +526,10 @@ export class EmployeeWebEndpoint {
                 'name': this.context.serialize(name, 'string'),
                 'ageGroup': this.context.serialize(ageGroup, 'string'),
                 'location': this.context.serialize(location, 'string'),
-                'skills': this.context.serialize(skills, 'boolean[]')
+                'germanSkill': this.context.serialize(germanSkill, 'boolean'),
+                'englishSkill': this.context.serialize(englishSkill, 'boolean'),
+                'licenseSkill': this.context.serialize(licenseSkill, 'boolean'),
+                'studentSkill': this.context.serialize(studentSkill, 'boolean')
             },
             'responseType': 'Employee'
         });
@@ -554,6 +566,14 @@ export class EmployerWebEndpoint {
         });
     }
 
+    getCurrent(): Observable<Employer> {
+        return this.context.request({
+            'uriTemplate': '/api/v1/employer/me',
+            'method': 'GET',
+            'responseType': 'Employer'
+        });
+    }
+
     update(id: string, name: string, domain: string, homepage: string): Observable<Employer> {
         return this.context.request({
             'uriTemplate': '/api/v1/employer/{id}',
@@ -577,13 +597,13 @@ export class JobWebEndpoint {
     constructor(private context: ApinaEndpointContext) {
     }
 
-    create(title: string, description: string, location: string, qty: string, salary: string): Observable<Job> {
+    create(description: string, title: string, location: string, qty: string, salary: string): Observable<Job> {
         return this.context.request({
             'uriTemplate': '/api/v1/job',
             'method': 'POST',
             'requestParams': {
-                'title': this.context.serialize(title, 'string'),
                 'descr': this.context.serialize(description, 'string'),
+                'title': this.context.serialize(title, 'string'),
                 'location': this.context.serialize(location, 'string'),
                 'qty': this.context.serialize(qty, 'string'),
                 'salary': this.context.serialize(salary, 'string')
@@ -592,10 +612,13 @@ export class JobWebEndpoint {
         });
     }
 
-    delete(): Observable<void> {
+    delete(jobId: string): Observable<void> {
         return this.context.request({
             'uriTemplate': '/api/v1/job/{id}',
-            'method': 'DELETE'
+            'method': 'DELETE',
+            'pathVariables': {
+                'id': this.context.serialize(jobId, 'string')
+            }
         });
     }
 

@@ -24,6 +24,10 @@ public class EmployeeJPA {
     String ageGroup;
     String location;
     String accountId;
+    boolean germanSkill;
+    boolean englishSkill;
+    boolean licenseSkill;
+    boolean studentSkill;
 
     static EmployeeJPA of(Employee e, String accountId) {
         return new EmployeeJPA(
@@ -31,7 +35,11 @@ public class EmployeeJPA {
                 e.getName(),
                 e.getAgeGroup(),
                 e.getLocation(),
-                accountId
+                accountId,
+                e.isGermanSkill(),
+                e.isEnglishSkill(),
+                e.isLicenseSkill(),
+                e.isStudentSkill()
         );
     }
 
@@ -41,7 +49,10 @@ public class EmployeeJPA {
                 this.name,
                 this.ageGroup,
                 this.location,
-                new boolean[5]
+                this.germanSkill,
+                this.englishSkill,
+                this.licenseSkill,
+                this.studentSkill
         );
     }
 }

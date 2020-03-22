@@ -1,5 +1,6 @@
 package io.swag.corona.employer.adapter.out.postgres;
 
+import io.swag.corona.employer.application.port.out.GetEmployerIdByAccountIdPort;
 import io.swag.corona.employer.application.port.out.GetEmployerPort;
 import io.swag.corona.employer.application.port.out.SaveEmployerPort;
 import io.swag.corona.employer.domain.Employer;
@@ -10,8 +11,8 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class EmployerPostgresAdapter implements
         SaveEmployerPort,
-        GetEmployerPort
-{
+        GetEmployerIdByAccountIdPort,
+        GetEmployerPort {
 
     private final EmployerJPARepository repository;
 
@@ -34,5 +35,10 @@ public class EmployerPostgresAdapter implements
     @Override
     public Employer getById(String id) {
         return repository.findById(id).map(EmployerJPA::toDomain).orElse(null);
+    }
+
+    @Override
+    public String findByAccountId(String accountId) {
+        return repository.findByAccountId(accountId).map(employerJPA -> employerJPA.accountId).orElse(null);
     }
 }
