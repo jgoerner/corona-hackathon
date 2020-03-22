@@ -16,10 +16,10 @@ public class EmployerPostgresAdapter implements
     private final EmployerJPARepository repository;
 
     @Override
-    public Employer save(Employer employer) {
+    public Employer save(Employer employer, String accountId) {
 
         // Domain -> JPA
-        EmployerJPA recordToBeSaved = EmployerJPA.of(employer);
+        EmployerJPA recordToBeSaved = EmployerJPA.of(employer, accountId);
 
         // Magic
         EmployerJPA recordSaved = repository.save(recordToBeSaved);

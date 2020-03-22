@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Primary
 @Component
 @RequiredArgsConstructor
-public class EmployeeIdService implements
+public class EmployeeService implements
         CreateEmployeeUseCase,
         DeleteEmployeeUseCase,
         GetEmployeeUseCase,
