@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {NzMessageService} from "ng-zorro-antd";
-import {HttpClient} from "@angular/common/http";
+import {Component, OnInit} from '@angular/core';
+import {Job} from "../../../../shared/apina-api";
 
 @Component({
   selector: 'app-list-offers',
@@ -9,24 +8,30 @@ import {HttpClient} from "@angular/common/http";
 })
 
 export class ListOffersComponent implements OnInit {
-  listOfData = [
+  listOfData: Job[] = [
     {
-      key: '1',
-      company: 'ALDI',
+      id: null,
       title: 'Supermarket Support',
-      location: 'Munich'
+      description: null,
+      location: 'Munich',
+      qty: 10,
+      salary: 10
     },
     {
-      key: '1',
-      company: 'AMAZON',
-      title: 'Logistics Support',
-      location: 'Berlin'
+      id: null,
+      title: 'Logistik Support',
+      description: null,
+      location: 'Berlin',
+      qty: 10,
+      salary: 10
     },
     {
-      key: '1',
-      company: 'Zuckerrübe AG',
-      title: 'Field Worker',
-      location: 'Buxtehude'
+      id: null,
+      title: 'Feldarbeiter:in',
+      description: null,
+      location: 'Buxdehude',
+      qty: 10,
+      salary: 10
     }
   ];
 

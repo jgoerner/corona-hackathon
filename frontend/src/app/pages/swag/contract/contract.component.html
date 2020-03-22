@@ -1,1 +1,23 @@
-<p>contract works!</p>
+<h1 nz-title>Meine Verträge</h1>
+<nz-table #basicTable [nzData]="contracts">
+  <thead>
+  <tr>
+    <th>Job-Bezeichnung</th>
+    <th>Verifiziert</th>
+    <th>Unterzeichnet</th>
+    <th>Aktion</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of basicTable.data">
+    <td>{{ data.jobId }}</td>
+    <td><label nz-checkbox nzDisabled [ngModel]="data.videoVerified"></label></td>
+    <td><label nz-checkbox nzDisabled [ngModel]="data.signed"></label></td>
+    <td>
+      <a [routerLink]="'./' + data.id">bearbeiten</a>
+      <nz-divider nzType="vertical"></nz-divider>
+      <a>löschen</a>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>

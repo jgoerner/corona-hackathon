@@ -1,13 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {EmployeeWebEndpoint} from "../../../../../shared/apina-api";
 
 @Component({
-  selector: 'app-meta-form',
-  templateUrl: './meta-form.component.html',
-  styleUrls: ['./meta-form.component.scss']
+  selector: 'app-employer-meta-form',
+  templateUrl: './employer-meta-form.component.html',
+  styleUrls: ['./employer-meta-form.component.scss']
 })
-export class MetaFormComponent implements OnInit {
+export class EmployerMetaFormComponent implements OnInit {
 
   validateForm: FormGroup;
 
@@ -19,14 +18,13 @@ export class MetaFormComponent implements OnInit {
 
   }
 
-  constructor(private fb: FormBuilder,
-              private employeeEndpoint: EmployeeWebEndpoint) {
+  constructor(private fb: FormBuilder) {
   }
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({
       name: ['', [Validators.required]],
-      age: [null, [Validators.required]],
+      description: [null, [Validators.required]],
       location: [null, [Validators.required]]
     });
   }

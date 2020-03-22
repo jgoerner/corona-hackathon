@@ -1,0 +1,8 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5" nzFor="description" nzRequired>Wichtige Infos</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzErrorTip="Please enter description!">
+      <textarea nz-input formControlName="description" placeholder="Beschreibung eingeben" rows="4"></textarea>
+    </nz-form-control>
+  </nz-form-item>
+</form>

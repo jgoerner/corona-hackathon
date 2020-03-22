@@ -6,6 +6,7 @@ import {NgZorroAntdModule} from 'ng-zorro-antd';
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {LoginGuard} from "./login.guard";
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {HttpClientModule} from '@angular/common/http';
   declarations: [],
   providers: [
     AuthService,
-    AuthGuard
+    AuthGuard,
+    LoginGuard
   ],
 })
 export class SharedModule {

@@ -9,12 +9,13 @@ import {ListOffersComponent} from "./offer/list-offers/list-offers.component";
 import {EmployeeProfileComponent} from "./find/employee-profile/employee-profile.component";
 import {MatchingComponent} from "./find/matching/matching.component";
 import {AuthGuard} from '../../shared/auth.guard';
+import {ContractDetailComponent} from "./contract/contract-detail/contract-detail.component";
 
 const routes: Routes = [
     {
       path: '', component: SwagComponent, canActivate: [AuthGuard], children: [
         {path: 'account', component: AccountComponent},
-        {path: 'contract/:id', component: ContractComponent},
+        {path: 'contract/:id', component: ContractDetailComponent},
         {path: 'contract', component: ContractComponent},
         {path: 'offer/profile', component: EmployerProfileComponent},
         {path: 'offer/create', component: CreateOfferComponent},

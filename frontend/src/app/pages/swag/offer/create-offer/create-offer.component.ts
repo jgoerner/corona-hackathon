@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-create-offer',
@@ -7,13 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateOfferComponent implements OnInit {
 
-  index = 0;
-  disable = false;
+  currentStepIndex = 0;
+
   onIndexChange(index: number): void {
-    this.index = index;
+    this.currentStepIndex = index;
   }
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

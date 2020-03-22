@@ -1,0 +1,20 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5" nzRequired nzFor="nameField">Name</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzErrorTip="Please type your name!">
+      <input id="nameField" type="text" nz-input formControlName="name" placeholder="Name eingeben"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5" nzFor="description" nzRequired>Beschreibung</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzErrorTip="Please enter description!">
+      <textarea nz-input formControlName="description" placeholder="Beschreibung eingeben" rows="4"></textarea>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5" nzRequired nzFor="location">Postleitzahl</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzErrorTip="Please type in the zip code of your home location!">
+      <input id="location" type="text" nz-input formControlName="location" placeholder="Postleitzahl eingeben"/>
+    </nz-form-control>
+  </nz-form-item>
+</form>

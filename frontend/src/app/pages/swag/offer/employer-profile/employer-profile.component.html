@@ -1,18 +1,18 @@
+<h1>Firmenprofil anlegen/bearbeiten</h1>
 <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
   <nz-form-item>
-    <nz-form-label [nzSpan]="5" nzRequired nzFor="name">Company Name</nz-form-label>
+    <nz-form-label [nzSpan]="5" nzRequired nzFor="name">Firmenname</nz-form-label>
     <nz-form-control [nzSpan]="12" nzErrorTip="Please input your username!">
-      <input id="name" type="text" nz-input formControlName="name" />
+      <input id="name" type="text" nz-input formControlName="name"/>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
-    <nz-form-label [nzSpan]="5" nzFor="domain" nzRequired>Domain</nz-form-label>
+    <nz-form-label [nzSpan]="5" nzFor="domain" nzRequired>Branche</nz-form-label>
     <nz-form-control [nzSpan]="12" nzErrorTip="Please select your domain!">
       <nz-select
         id="domain"
         formControlName="domain"
-        nzPlaceHolder="Select option"
-      >
+        nzPlaceHolder="Select option">
         <nz-option nzValue="agriculture" nzLabel="agricultur"></nz-option>
         <nz-option nzValue="supermarket" nzLabel="supermarket"></nz-option>
       </nz-select>
@@ -21,7 +21,7 @@
   <nz-form-item>
     <nz-form-label [nzSpan]="5" nzRequired nzFor="name">Homepage</nz-form-label>
     <nz-form-control [nzSpan]="12" nzErrorTip="Please input your homepage!">
-      <input id="homepage" type="text" nz-input formControlName="homepage" />
+      <input id="homepage" type="text" nz-input formControlName="homepage"/>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
@@ -30,4 +30,3 @@
     </nz-form-control>
   </nz-form-item>
 </form>
-`,

@@ -1,11 +1,11 @@
-<h1 nz-title>MY JOB MATCHINGS</h1>
+<h1 nz-title>Vermittlung/Meine Job Angebote</h1>
 <nz-table #basicTable [nzData]="listOfData">
   <thead>
   <tr>
-    <th>Company</th>
-    <th>Title</th>
-    <th>Location</th>
-    <th>Action</th>
+    <th>Firma</th>
+    <th>Job-Bezeichnung</th>
+    <th>Ort</th>
+    <th>Aktion</th>
   </tr>
   </thead>
   <tbody>
@@ -14,9 +14,9 @@
     <td>{{ data.title }}</td>
     <td>{{ data.location }}</td>
     <td>
-      <a>accept</a>
+      <a>annehmen</a>
       <nz-divider nzType="vertical"></nz-divider>
-      <a>reject</a>
+      <a>ablehnen</a>
     </td>
   </tr>
   </tbody>
