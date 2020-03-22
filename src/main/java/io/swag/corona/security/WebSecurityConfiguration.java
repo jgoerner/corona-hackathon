@@ -14,7 +14,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
@@ -51,8 +50,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                     .authorizeRequests()
-                    .antMatchers("/api/v1/login", "/api/v1/register", "/api/v1/session").permitAll()
-                    .anyRequest().authenticated()
+                    //.antMatchers("/api/v1/login", "/api/v1/register", "/api/v1/session").permitAll()
+                    .anyRequest().permitAll()//.authenticated()
                 .and()
                     .formLogin()
                     .loginPage("/login")
@@ -69,7 +68,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                     .clearAuthentication(true)
                     .deleteCookies("JSESSIONID")
                 .and()
-                    .csrf()
-                    .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
+                    .csrf().disable();
+                    //.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
     }
 }

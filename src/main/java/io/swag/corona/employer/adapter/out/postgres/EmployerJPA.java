@@ -25,7 +25,7 @@ public class EmployerJPA {
     String homepage;
 
     static EmployerJPA of(Employer e) {
-        return new EmployerJPA(null, e.getName(), e.getDomain(), e.getHomepage());
+        return new EmployerJPA(e.getId(), e.getName(), e.getDomain(), e.getHomepage());
     }
 
     Employer toDomain() {
