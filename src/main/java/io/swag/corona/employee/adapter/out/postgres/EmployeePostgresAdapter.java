@@ -1,6 +1,7 @@
 package io.swag.corona.employee.adapter.out.postgres;
 
 import io.swag.corona.employee.application.port.out.DeleteEmployeePort;
+import io.swag.corona.employee.application.port.out.GetEmployeeIdByAccountIdPort;
 import io.swag.corona.employee.application.port.out.GetEmployeePort;
 import io.swag.corona.employee.application.port.out.SaveEmployeePort;
 import io.swag.corona.employee.domain.Employee;
@@ -12,14 +13,15 @@ import org.springframework.stereotype.Component;
 public class EmployeePostgresAdapter implements
         SaveEmployeePort,
         DeleteEmployeePort,
-        GetEmployeePort
+        GetEmployeePort,
+        GetEmployeeIdByAccountIdPort
 {
 
     private final EmployeeRepository repository;
 
     @Override
-    public Employee save(Employee employee) {
-        return repository.save(EmployeeJPA.of(employee)).toDomain();
+    public Employee save(Employee employee, String accountId) {
+        return repository.save(EmployeeJPA.of(employee, accountId)).toDomain();
     }
 
     @Override
@@ -31,4 +33,10 @@ public class EmployeePostgresAdapter implements
     public Employee getById(String id) {
         return repository.findById(id).map(EmployeeJPA::toDomain).orElse(null);
     }
+
+    @Override
+    public String findByAccountId(String accountId) {
+        return repository.findByAccountId(accountId).map(EmployeeJPA::toDomain).map(Employee::getId).orElse("-1");
+    }
+
 }

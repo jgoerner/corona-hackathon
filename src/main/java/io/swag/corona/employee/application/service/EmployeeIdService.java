@@ -1,10 +1,9 @@
 package io.swag.corona.employee.application.service;
 
-import io.swag.corona.employee.application.port.in.CreateEmployeeUseCase;
-import io.swag.corona.employee.application.port.in.DeleteEmployeeUseCase;
-import io.swag.corona.employee.application.port.in.GetEmployeeUseCase;
-import io.swag.corona.employee.application.port.in.UpdateEmployeeUseCase;
+import io.swag.corona.account.application.port.in.FetchActiveAccountUseCase;
+import io.swag.corona.employee.application.port.in.*;
 import io.swag.corona.employee.application.port.out.DeleteEmployeePort;
+import io.swag.corona.employee.application.port.out.GetEmployeeIdByAccountIdPort;
 import io.swag.corona.employee.application.port.out.GetEmployeePort;
 import io.swag.corona.employee.application.port.out.SaveEmployeePort;
 import io.swag.corona.employee.domain.Employee;
@@ -15,20 +14,24 @@ import org.springframework.stereotype.Component;
 @Primary
 @Component
 @RequiredArgsConstructor
-public class EmployeeService implements
+public class EmployeeIdService implements
         CreateEmployeeUseCase,
         DeleteEmployeeUseCase,
         GetEmployeeUseCase,
-        UpdateEmployeeUseCase
+        UpdateEmployeeUseCase,
+        GetActiveEmployeeIdUseCase
 {
 
     private final SaveEmployeePort saveEmployeePort;
     private final DeleteEmployeePort deleteEmployeePort;
     private final GetEmployeePort getEmployeePort;
+    private final FetchActiveAccountUseCase fetchActiveAccountUseCase;
+    private final GetEmployeeIdByAccountIdPort getEmployeeIdByAccountIdPort;
 
     @Override
     public Employee create(String name, String ageGroup, String location, boolean[] skills) {
-        return saveEmployeePort.save(new Employee(null, name, ageGroup, location, skills));
+        var activeAccountId = fetchActiveAccountUseCase.activeAccount().getId();
+        return saveEmployeePort.save(new Employee(null, name, ageGroup, location, skills), activeAccountId);
     }
 
     @Override
@@ -43,6 +46,13 @@ public class EmployeeService implements
 
     @Override
     public Employee updateEmployee(String id, String name, String ageGroup, String location, boolean[] skills) {
-        return saveEmployeePort.save(new Employee(id, name, ageGroup, location, skills));
+        var activeAccountId = fetchActiveAccountUseCase.activeAccount().getId();
+        return saveEmployeePort.save(new Employee(id, name, ageGroup, location, skills),activeAccountId);
+    }
+
+    @Override
+    public String getActiveEmployeeId() {
+        var activeAccountId = fetchActiveAccountUseCase.activeAccount().getId();
+        return getEmployeeIdByAccountIdPort.findByAccountId(activeAccountId);
     }
 }

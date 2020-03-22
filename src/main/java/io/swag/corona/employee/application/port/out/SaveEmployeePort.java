@@ -4,5 +4,5 @@ import io.swag.corona.employee.domain.Employee;
 
 public interface SaveEmployeePort {
 
-    Employee save(Employee employee);
+    Employee save(Employee employee, String accountId);
 }

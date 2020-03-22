@@ -25,7 +25,7 @@ public class AccountMockService implements
     public Account changePassword(String oldPassword, String newPassword) {
 
         return new Account(
-                faker.bothify("???"),
+                faker.bothify("????-????-????-????"),
                 faker.bothify("????##@gmail.com"),
                 newPassword,
                 "ROLE_USER"
@@ -41,7 +41,7 @@ public class AccountMockService implements
     public Account activeAccount() {
 
         return new Account(
-                faker.bothify("???"),
+               "-42",
                 faker.bothify("????##@gmail.com"),
                 faker.bothify("????-????-????-????"),
                 "ROLE_USER"

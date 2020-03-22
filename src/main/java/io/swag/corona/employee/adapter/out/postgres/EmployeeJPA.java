@@ -23,13 +23,15 @@ public class EmployeeJPA {
     String name;
     String ageGroup;
     String location;
+    String accountId;
 
-    static EmployeeJPA of(Employee e) {
+    static EmployeeJPA of(Employee e, String accountId) {
         return new EmployeeJPA(
                 e.getId(),
                 e.getName(),
                 e.getAgeGroup(),
-                e.getLocation()
+                e.getLocation(),
+                accountId
         );
     }
 
