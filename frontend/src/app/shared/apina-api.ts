@@ -498,6 +498,14 @@ export class EmployeeWebEndpoint {
         });
     }
 
+    getCurrent(): Observable<Employee> {
+        return this.context.request({
+            'uriTemplate': '/api/v1/employee/me',
+            'method': 'GET',
+            'responseType': 'Employee'
+        });
+    }
+
     update(id: string, name: string, ageGroup: string, location: string, skills: boolean[]): Observable<Employee> {
         return this.context.request({
             'uriTemplate': '/api/v1/employee/{id}',

@@ -1,0 +1,28 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5" nzRequired nzFor="nameField">Name</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzErrorTip="Please type your name!">
+      <input id="nameField" type="text" nz-input formControlName="name" placeholder="Name eingeben"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5" nzFor="Age Group" nzRequired>Altersgruppe</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzErrorTip="Please select your age group!">
+      <nz-select
+        id="age"
+        formControlName="age"
+        nzPlaceHolder="Wähle eine Option">
+        <nz-option nzValue="youth" nzLabel="16-18"></nz-option>
+        <nz-option nzValue="young" nzLabel="18-35"></nz-option>
+        <nz-option nzValue="adult" nzLabel="35-60"></nz-option>
+        <nz-option nzValue="old" nzLabel=">60"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5" nzRequired nzFor="location">Postleitzahl</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzErrorTip="Please type in the zip code of your home location!">
+      <input id="location" type="text" nz-input formControlName="location" placeholder="Postleitzahl eingeben"/>
+    </nz-form-control>
+  </nz-form-item>
+</form>

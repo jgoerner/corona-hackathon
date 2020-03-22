@@ -1,0 +1,8 @@
+<nz-content>
+  <h3>Meine Fähigkeiten und Qualifikationen</h3>
+  <p>Bitte wähle die zutreffenden Optionen aus</p>
+  <nz-checkbox-group
+    [(ngModel)]="skills"
+    (ngModelChange)="updateSkills(skills)">
+  </nz-checkbox-group>
+</nz-content>
