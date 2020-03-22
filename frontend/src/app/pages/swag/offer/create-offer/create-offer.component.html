@@ -3,8 +3,7 @@
 </article>
 
 <nz-steps nzDirection="horizontal"
-          [nzCurrent]="currentStepIndex"
-          (nzIndexChange)="onIndexChange($event)">
+          [nzCurrent]="currentStepIndex">
   <nz-step nzTitle="Info"></nz-step>
   <nz-step nzTitle="Fähigkeiten"></nz-step>
   <nz-step nzTitle="Willkommenspaket"></nz-step>
@@ -12,16 +11,19 @@
 
 <div class="create-offer__steps-content"
      [ngSwitch]="currentStepIndex">
-  <app-employer-meta-form *ngSwitchCase="0"></app-employer-meta-form>
-  <app-employer-skills-form *ngSwitchCase="1"></app-employer-skills-form>
-  <app-welcome-form *ngSwitchCase="2"></app-welcome-form>
+  <app-employer-meta-form *ngSwitchCase="0" [(job)]="job"></app-employer-meta-form>
+  <app-employer-skills-form *ngSwitchCase="1" [job]="job"></app-employer-skills-form>
+  <app-welcome-form *ngSwitchCase="2" [job]="job"></app-welcome-form>
 </div>
 
 <div class="create-offer__steps-action">
   <button nz-button nzType="default" (click)="onIndexChange(currentStepIndex - 1)" *ngIf="currentStepIndex > 0">
     <span>Zurück</span>
   </button>
-  <button nz-button nzType="default" (click)="onIndexChange(currentStepIndex + 1)" *ngIf="currentStepIndex < 2">
+  <button nz-button
+          nzType="default"
+          [disabled]="!job"
+          (click)="onIndexChange(currentStepIndex + 1)" *ngIf="currentStepIndex < 2">
     <span>Weiter</span>
   </button>
 </div>

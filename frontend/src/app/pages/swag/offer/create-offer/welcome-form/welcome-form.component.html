@@ -1,8 +1,12 @@
-<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
-  <nz-form-item>
-    <nz-form-label [nzSpan]="5" nzFor="description" nzRequired>Wichtige Infos</nz-form-label>
-    <nz-form-control [nzSpan]="12" nzErrorTip="Please enter description!">
-      <textarea nz-input formControlName="description" placeholder="Beschreibung eingeben" rows="4"></textarea>
-    </nz-form-control>
-  </nz-form-item>
-</form>
+<nz-col>
+  <nz-row>
+    <h1>Herzlichen Glückwunsch!</h1>
+  </nz-row>
+  <nz-row>
+    <button nz-button nzType="primary"
+            nzSize="large"
+            routerLink="/swag/offer/list">
+      <i nz-icon nzType="check"></i>Zu meinen Jobs
+    </button>
+  </nz-row>
+</nz-col>

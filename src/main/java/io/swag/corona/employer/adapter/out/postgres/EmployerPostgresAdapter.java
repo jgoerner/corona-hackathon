@@ -39,6 +39,6 @@ public class EmployerPostgresAdapter implements
 
     @Override
     public String findByAccountId(String accountId) {
-        return repository.findByAccountId(accountId).map(employerJPA -> employerJPA.accountId).orElse(null);
+        return repository.findByAccountId(accountId).map(employerJPA -> employerJPA.id).orElse(null);
     }
 }

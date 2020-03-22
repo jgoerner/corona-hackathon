@@ -27,6 +27,9 @@ export class AuthService {
     this.accountEndpoint.session()
       .subscribe((result) => {
         this.sessionActive$.next(result);
+        if (result) {
+          this.router.navigateByUrl("/swag");
+        }
       }, (err) => {
         this.sessionActive$.next(false);
       });

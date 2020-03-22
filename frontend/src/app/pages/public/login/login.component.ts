@@ -37,7 +37,6 @@ export class LoginComponent implements OnInit {
     this.http.post("/api/v1/login", data, {headers})
       .subscribe((res) => {
         this.authService.reCheckIfSessionActive();
-        this.router.navigateByUrl("/swag");
       });
   }
 

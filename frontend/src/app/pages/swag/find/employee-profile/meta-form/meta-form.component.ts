@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Employee, EmployeeWebEndpoint} from "../../../../../shared/apina-api";
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Employee, EmployeeWebEndpoint} from '../../../../../shared/apina-api';
 
 @Component({
   selector: 'app-meta-form',
@@ -26,10 +26,10 @@ export class MetaFormComponent implements OnInit {
     const location = this.validateForm.get('location').value;
     if (this.employee && this.employee.id) {
       this.employeeEndpoint.update(this.employee.id, name, age, location, this.employee.germanSkill, this.employee.englishSkill, this.employee.licenseSkill, this.employee.studentSkill).subscribe((employee) => {
-      })
+      });
     } else {
       this.employeeEndpoint.create(name, age, location, false, false, false, false).subscribe((employee) => {
-      })
+      });
     }
   }
 
@@ -43,11 +43,11 @@ export class MetaFormComponent implements OnInit {
       if (employee) {
         this.employee = employee;
         this.validateForm.patchValue({
-          'name': employee.name,
-          'age': employee.ageGroup,
-          'location': employee.location
+          name: employee.name,
+          age: employee.ageGroup,
+          location: employee.location
         });
       }
-    })
+    });
   }
 }

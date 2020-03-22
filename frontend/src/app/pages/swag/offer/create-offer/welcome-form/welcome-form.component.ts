@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Job, JobWebEndpoint} from "../../../../../shared/apina-api";
 
 @Component({
   selector: 'app-welcome-form',
@@ -8,22 +9,14 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 })
 export class WelcomeFormComponent implements OnInit {
 
-  validateForm: FormGroup;
+  @Input()
+  job: Job;
 
-  submitForm(): void {
-    for (const i in this.validateForm.controls) {
-      this.validateForm.controls[i].markAsDirty();
-      this.validateForm.controls[i].updateValueAndValidity();
-    }
-
-  }
-
-  constructor(private fb: FormBuilder) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.validateForm = this.fb.group({
-      description: [null, [Validators.required]]
-    });
+
   }
+
 }

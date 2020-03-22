@@ -605,7 +605,7 @@ export class JobWebEndpoint {
     constructor(private context: ApinaEndpointContext) {
     }
 
-    create(description: string, title: string, location: string, qty: string, salary: string, germanSkill: boolean, englishSkill: boolean, licenseSkill: boolean, studentSkill: boolean): Observable<Job> {
+    create(description: string, title: string, location: string, qty: number, salary: number, germanSkill: boolean, englishSkill: boolean, licenseSkill: boolean, studentSkill: boolean): Observable<Job> {
         return this.context.request({
             'uriTemplate': '/api/v1/job',
             'method': 'POST',
@@ -613,8 +613,8 @@ export class JobWebEndpoint {
                 'descr': this.context.serialize(description, 'string'),
                 'title': this.context.serialize(title, 'string'),
                 'location': this.context.serialize(location, 'string'),
-                'qty': this.context.serialize(qty, 'string'),
-                'salary': this.context.serialize(salary, 'string'),
+                'qty': this.context.serialize(qty, 'number'),
+                'salary': this.context.serialize(salary, 'number'),
                 'germanSkill': this.context.serialize(germanSkill, 'boolean'),
                 'englishSkill': this.context.serialize(englishSkill, 'boolean'),
                 'licenseSkill': this.context.serialize(licenseSkill, 'boolean'),
@@ -653,7 +653,7 @@ export class JobWebEndpoint {
         });
     }
 
-    update(id: string, title: string, description: string, location: string, qty: string, salary: string, germanSkill: boolean, englishSkill: boolean, licenseSkill: boolean, studentSkill: boolean): Observable<Job> {
+    update(id: string, title: string, description: string, location: string, qty: number, salary: number, germanSkill: boolean, englishSkill: boolean, licenseSkill: boolean, studentSkill: boolean): Observable<Job> {
         return this.context.request({
             'uriTemplate': '/api/v1/job/{id}',
             'method': 'PUT',
@@ -664,8 +664,8 @@ export class JobWebEndpoint {
                 'title': this.context.serialize(title, 'string'),
                 'descr': this.context.serialize(description, 'string'),
                 'location': this.context.serialize(location, 'string'),
-                'qty': this.context.serialize(qty, 'string'),
-                'salary': this.context.serialize(salary, 'string'),
+                'qty': this.context.serialize(qty, 'number'),
+                'salary': this.context.serialize(salary, 'number'),
                 'germanSkill': this.context.serialize(germanSkill, 'boolean'),
                 'englishSkill': this.context.serialize(englishSkill, 'boolean'),
                 'licenseSkill': this.context.serialize(licenseSkill, 'boolean'),

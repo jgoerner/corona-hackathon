@@ -25,10 +25,10 @@ export class EmployerProfileComponent implements OnInit {
     const homepage = this.validateForm.get('homepage').value;
     if (this.employer && this.employer.id) {
       this.employerWebEndpoint.update(this.employer.id, name, domain, homepage).subscribe((employer) => {
-      })
+      });
     } else {
       this.employerWebEndpoint.create(name, domain, homepage).subscribe((employer) => {
-      })
+      });
     }
   }
 
@@ -39,6 +39,7 @@ export class EmployerProfileComponent implements OnInit {
       homepage: [null, [Validators.required]]
     });
     this.employerWebEndpoint.getCurrent().subscribe((employer) => {
+      console.log(employer);
       if (employer) {
         this.employer = employer;
         this.validateForm.patchValue({
