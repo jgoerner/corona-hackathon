@@ -16,7 +16,7 @@ public class EmployeeWebController {
     private final CreateEmployeeUseCase createEmployeeUseCase;
     private final DeleteEmployeeUseCase deleteEmployeeUseCase;
     private final GetEmployeeUseCase getEmployeeUseCase;
-    private UpdateEmployeeUseCase updateEmployeeUseCase;
+    private final UpdateEmployeeUseCase updateEmployeeUseCase;
 
     @RequestMapping(path = "/employee", method = RequestMethod.POST)
     public Employee create(

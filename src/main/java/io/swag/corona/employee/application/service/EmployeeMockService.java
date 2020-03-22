@@ -6,11 +6,9 @@ import io.swag.corona.employee.application.port.in.DeleteEmployeeUseCase;
 import io.swag.corona.employee.application.port.in.GetEmployeeUseCase;
 import io.swag.corona.employee.application.port.in.UpdateEmployeeUseCase;
 import io.swag.corona.employee.domain.Employee;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
-@Component
 public class EmployeeMockService implements CreateEmployeeUseCase, DeleteEmployeeUseCase, GetEmployeeUseCase, UpdateEmployeeUseCase {
 
     private Faker faker;
