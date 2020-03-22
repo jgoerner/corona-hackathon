@@ -2,7 +2,6 @@
 <nz-table #basicTable [nzData]="listOfData">
   <thead>
   <tr>
-    <th>Firma</th>
     <th>Job-Bezeichnung</th>
     <th>Ort</th>
     <th>Aktion</th>
@@ -10,7 +9,6 @@
   </thead>
   <tbody>
   <tr *ngFor="let data of basicTable.data">
-    <td>{{ data.company }}</td>
     <td>{{ data.title }}</td>
     <td>{{ data.location }}</td>
     <td>
