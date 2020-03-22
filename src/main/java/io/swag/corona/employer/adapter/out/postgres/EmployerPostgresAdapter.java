@@ -1,5 +1,6 @@
 package io.swag.corona.employer.adapter.out.postgres;
 
+import io.swag.corona.employer.application.port.out.GetEmployerPort;
 import io.swag.corona.employer.application.port.out.SaveEmployerPort;
 import io.swag.corona.employer.domain.Employer;
 import lombok.RequiredArgsConstructor;
@@ -7,15 +8,18 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class EmployerPostgresAdapter implements SaveEmployerPort {
+public class EmployerPostgresAdapter implements
+        SaveEmployerPort,
+        GetEmployerPort
+{
 
     private final EmployerJPARepository repository;
 
     @Override
-    public Employer save(Employer employer) {
+    public Employer save(Employer employer, String accountId) {
 
         // Domain -> JPA
-        EmployerJPA recordToBeSaved = EmployerJPA.of(employer);
+        EmployerJPA recordToBeSaved = EmployerJPA.of(employer, accountId);
 
         // Magic
         EmployerJPA recordSaved = repository.save(recordToBeSaved);
@@ -25,5 +29,10 @@ public class EmployerPostgresAdapter implements SaveEmployerPort {
 
         return recordAsDomainObject;
 
+    }
+
+    @Override
+    public Employer getById(String id) {
+        return repository.findById(id).map(EmployerJPA::toDomain).orElse(null);
     }
 }

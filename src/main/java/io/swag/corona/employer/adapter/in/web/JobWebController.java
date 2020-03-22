@@ -20,8 +20,8 @@ public class JobWebController {
 
     @RequestMapping(path = "/job", method = RequestMethod.POST)
     public Job create(
-            @RequestParam("title") String title,
             @RequestParam("descr") String description,
+            @RequestParam("title") String title,
             @RequestParam("location") String location,
             @RequestParam("qty") String qty,
             @RequestParam("salary") String salary
@@ -65,7 +65,7 @@ public class JobWebController {
     }
 
     @RequestMapping(path = "/job/{id}", method = RequestMethod.DELETE)
-    public void delete(String jobId) {
+    public void delete(@PathVariable("id") String jobId) {
         deleteJobUseCase.delete(jobId);
     }
 }

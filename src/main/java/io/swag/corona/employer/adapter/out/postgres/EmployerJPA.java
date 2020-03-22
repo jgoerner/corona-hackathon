@@ -23,9 +23,10 @@ public class EmployerJPA {
     String name;
     String domain;
     String homepage;
+    String accountId;
 
-    static EmployerJPA of(Employer e) {
-        return new EmployerJPA(null, e.getName(), e.getDomain(), e.getHomepage());
+    static EmployerJPA of(Employer e, String accountId) {
+        return new EmployerJPA(e.getId(), e.getName(), e.getDomain(), e.getHomepage(), accountId);
     }
 
     Employer toDomain() {

@@ -4,14 +4,12 @@ import com.github.javafaker.Faker;
 import io.swag.corona.employer.application.port.in.*;
 import io.swag.corona.employer.domain.Employer;
 import io.swag.corona.employer.domain.Job;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-@Component
 public class MockService implements
         CreateEmployerUseCase,
         GetEmployerUseCase,

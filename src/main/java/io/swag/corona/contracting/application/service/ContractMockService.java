@@ -6,7 +6,6 @@ import io.swag.corona.contracting.application.port.in.FindContractByJobUseCase;
 import io.swag.corona.contracting.application.port.in.FindContractsByJobUseCase;
 import io.swag.corona.contracting.application.port.in.UpdateContractUseCase;
 import io.swag.corona.contracting.domain.Contract;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.time.LocalTime;
@@ -14,7 +13,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-@Component
 public class ContractMockService implements
         CreateContractUseCase,
         FindContractsByJobUseCase,

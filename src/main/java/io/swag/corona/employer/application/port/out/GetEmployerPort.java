@@ -2,8 +2,7 @@ package io.swag.corona.employer.application.port.out;
 
 import io.swag.corona.employer.domain.Employer;
 
-public interface SaveEmployerPort {
+public interface GetEmployerPort {
 
-    Employer save(Employer employer, String accountId);
-
+    Employer getById(String id);
 }
