@@ -24,19 +24,24 @@ public class JobWebController {
             @RequestParam("title") String title,
             @RequestParam("location") String location,
             @RequestParam("qty") String qty,
-            @RequestParam("salary") String salary
+            @RequestParam("salary") String salary,
+            @RequestParam("germanSkill") boolean germanSkill,
+            @RequestParam("englishSkill") boolean englishSkill,
+            @RequestParam("licenseSkill") boolean licenseSkill,
+            @RequestParam("studentSkill") boolean studentSkill
     ) {
         return createJobUseCase.create(
                 title,
                 description,
                 location,
                 Long.parseLong(qty),
-                Long.parseLong(salary)
+                Long.parseLong(salary),
+                germanSkill, englishSkill, licenseSkill, studentSkill
         );
     }
 
-    @RequestMapping(path  = "/job", method = RequestMethod.GET)
-    public List<Job> findAll(){
+    @RequestMapping(path = "/job", method = RequestMethod.GET)
+    public List<Job> findAll() {
         return getJobsUseCase.findAll();
     }
 
@@ -52,7 +57,11 @@ public class JobWebController {
             @RequestParam("descr") String description,
             @RequestParam("location") String location,
             @RequestParam("qty") String qty,
-            @RequestParam("salary") String salary
+            @RequestParam("salary") String salary,
+            @RequestParam("germanSkill") boolean germanSkill,
+            @RequestParam("englishSkill") boolean englishSkill,
+            @RequestParam("licenseSkill") boolean licenseSkill,
+            @RequestParam("studentSkill") boolean studentSkill
     ) {
         return updateJobUseCase.update(
                 id,
@@ -60,7 +69,8 @@ public class JobWebController {
                 description,
                 location,
                 Long.parseLong(qty),
-                Long.parseLong(salary)
+                Long.parseLong(salary),
+                germanSkill, englishSkill, licenseSkill, studentSkill
         );
     }
 

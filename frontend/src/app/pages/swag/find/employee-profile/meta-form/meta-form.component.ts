@@ -25,9 +25,10 @@ export class MetaFormComponent implements OnInit {
     const age = this.validateForm.get('age').value;
     const location = this.validateForm.get('location').value;
     if (this.employee && this.employee.id) {
-      this.employeeEndpoint.update(this.employee.id, name, age, location, this.employee.skill)
+      this.employeeEndpoint.update(this.employee.id, name, age, location, this.employee.germanSkill, this.employee.englishSkill, this.employee.licenseSkill, this.employee.studentSkill).subscribe((employee) => {
+      })
     } else {
-      this.employeeEndpoint.create(name, age, location, []).subscribe((employee) => {
+      this.employeeEndpoint.create(name, age, location, false, false, false, false).subscribe((employee) => {
       })
     }
   }

@@ -20,35 +20,34 @@ public class JobService implements
         DeleteJobUseCase,
         GetJobUseCase,
         GetJobsUseCase,
-        UpdateJobUseCase
-    {
-        private final SaveJobPort saveJobPort;
-        private final DeleteJobPort deleteJobPort;
-        private final GetJobPort getJobPort;
-        private final GetJobsPort getJobsPort;
+        UpdateJobUseCase {
+    private final SaveJobPort saveJobPort;
+    private final DeleteJobPort deleteJobPort;
+    private final GetJobPort getJobPort;
+    private final GetJobsPort getJobsPort;
 
-        @Override
-        public Job create(String title, String description, String location, Long qty, Long salary) {
-            return saveJobPort.save(new Job("", title, description, location, qty, salary));
-        }
-
-        @Override
-        public void delete(String jobId) {
-            deleteJobPort.delete(jobId);
-        }
-
-        @Override
-        public Job findById(String id) {
-            return getJobPort.getById(id);
-        }
-
-        @Override
-        public List<Job> findAll() {
-            return getJobsPort.findAll();
-        }
-
-        @Override
-        public Job update(String id, String title, String description, String location, Long qty, Long salary) {
-            return saveJobPort.save(new Job(id, title, description, location, qty, salary));
-        }
+    @Override
+    public Job create(String title, String description, String location, Long qty, Long salary, boolean germanSkill, boolean englishSkill, boolean licenseSkill, boolean studentSkill) {
+        return saveJobPort.save(new Job("", title, description, location, qty, salary, germanSkill, englishSkill, licenseSkill, studentSkill));
     }
+
+    @Override
+    public void delete(String jobId) {
+        deleteJobPort.delete(jobId);
+    }
+
+    @Override
+    public Job findById(String id) {
+        return getJobPort.getById(id);
+    }
+
+    @Override
+    public List<Job> findAll() {
+        return getJobsPort.findAll();
+    }
+
+    @Override
+    public Job update(String id, String title, String description, String location, Long qty, Long salary, boolean germanSkill, boolean englishSkill, boolean licenseSkill, boolean studentSkill) {
+        return saveJobPort.save(new Job(id, title, description, location, qty, salary, germanSkill, englishSkill, licenseSkill, studentSkill));
+    }
+}

@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Employee, EmployeeWebEndpoint} from '../../../../../shared/apina-api';
 
 @Component({
   selector: 'app-skills-form',
@@ -7,20 +8,41 @@ import {Component, OnInit} from '@angular/core';
 })
 export class SkillsFormComponent implements OnInit {
 
+  employee: Employee;
+
   skills = [
-    {label: 'Immatrikuliert', value: 'Immatrikuliert'},
-    {label: 'Deutsch-sprachig', value: 'Deutsch-sprachig'},
-    {label: 'Englisch-sprachig', value: 'Englisch-sprachig'},
-    {label: 'Führerschein', value: 'Führerschein'}
+    {label: 'Deutsch-sprachig', value: 'Deutsch-sprachig', checked: false},
+    {label: 'Englisch-sprachig', value: 'Englisch-sprachig', checked: false},
+    {label: 'Führerschein', value: 'Führerschein', checked: false},
+    {label: 'Immatrikuliert', value: 'Immatrikuliert', checked: false}
   ];
 
-  constructor() {
+  constructor(private employeeWebEndpoint: EmployeeWebEndpoint) {
   }
 
   ngOnInit() {
+    this.employeeWebEndpoint.getCurrent().subscribe((employee) => {
+      if (employee) {
+        this.employee = employee;
+        this.skills[0]['checked'] = this.employee.germanSkill;
+        this.skills[1]['checked'] = this.employee.englishSkill;
+        this.skills[2]['checked'] = this.employee.licenseSkill;
+        this.skills[3]['checked'] = this.employee.studentSkill;
+      }
+    })
   }
 
-  updateSkills(skills: object[]) {
-    console.log(skills);
+  updateSkills() {
+    if (this.employee && this.employee.id) {
+      this.employeeWebEndpoint.update(this.employee.id,
+        this.employee.name,
+        this.employee.ageGroup,
+        this.employee.location,
+        this.skills[0]['checked'],
+        this.skills[1]['checked'],
+        this.skills[2]['checked'],
+        this.skills[3]['checked']).subscribe((res) => {
+      })
+    }
   }
 }
