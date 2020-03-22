@@ -1,6 +1,6 @@
 FROM python:3.7-stretch
 
-RUN apt-get update && apt-get install -yq build-essential
+RUN apt-get update && apt-get install -yq build-essential libpq-dev python-dev
 
 WORKDIR /matcher-ai
 
