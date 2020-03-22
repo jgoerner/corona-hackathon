@@ -1,4 +1,5 @@
 from flask import Blueprint, make_response, jsonify, request
+from .utils import filter_and_score_jobs
 
 api = Blueprint("matcher-api", __name__)
 
@@ -24,7 +25,5 @@ def recommendations():
     :return: List[{job_id, score, explanation}] with recommendations
     """
     employee_id = request.args.get(key="employee_id", default="")
-    print(employee_id)
-    # TODO: get job recommendations from engine for employee
-    results = jsonify([])
+    results = filter_and_score_jobs(employee_id)
     return make_response(results), 200
