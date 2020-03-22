@@ -11,6 +11,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {registerLocaleData} from '@angular/common';
 import de from '@angular/common/locales/de';
 import {PublicModule} from "./pages/public/public.module";
+import {SharedModule} from './shared/shared.module';
 
 registerLocaleData(de);
 
@@ -22,11 +23,9 @@ registerLocaleData(de);
     BrowserModule,
     AppRoutingModule,
     IconsProviderModule,
-    NgZorroAntdModule,
-    FormsModule,
-    HttpClientModule,
     BrowserAnimationsModule,
-    PublicModule
+    PublicModule,
+    SharedModule
   ],
   providers: [{provide: NZ_I18N, useValue: de_DE}],
   bootstrap: [AppComponent]

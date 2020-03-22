@@ -1,11 +1,11 @@
 [
-    {
-        "context": [
-            "/api"
-        ],
-        "target": "http://localhost:8080",
-        "logLevel": "debug",
-        "secure": false,
-        "ws": true
-    }
+  {
+    "context": [
+      "/api"
+    ],
+    "target": "http://localhost:8080",
+    "logLevel": "debug",
+    "secure": false,
+    "ws": true
+  }
 ]

@@ -12,9 +12,9 @@ export type LocalTime = {};
 
 export interface Account {
     email: string;
-    employeeId: string;
-    employerId: string;
+    id: string;
     password: string;
+    role: string;
 }
 
 export interface Contract {
@@ -62,9 +62,9 @@ export function registerDefaultSerializers(config: ApinaConfig) {
 
     config.registerClassSerializer('Account', {
         'email': 'string',
-        'employeeId': 'string',
-        'employerId': 'string',
-        'password': 'string'
+        'id': 'string',
+        'password': 'string',
+        'role': 'string'
     });
 
     config.registerClassSerializer('Contract', {
@@ -358,18 +358,6 @@ export class AccountEndpoint {
                 'newPassword': this.context.serialize(newPassword, 'string')
             },
             'responseType': 'Account'
-        });
-    }
-
-    login(email: string, password: string): Observable<boolean> {
-        return this.context.request({
-            'uriTemplate': '/api/v1/login',
-            'method': 'POST',
-            'requestParams': {
-                'email': this.context.serialize(email, 'string'),
-                'password': this.context.serialize(password, 'string')
-            },
-            'responseType': 'boolean'
         });
     }
 
