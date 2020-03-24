@@ -12,9 +12,7 @@
     ·
     <a href="https://github.com/jgoerner/corona-hackathon/projects/1">Current Status</a>
     ·
-    <a href="https://github.com/jgoerner/corona-hackathon/issues/new?assignees=&labels=&template=workpackage.md&title=">Get Involved</a>
-    <img src="images/logo-swag.png" alt="Logo" width="200" height="200">
-        
+    <a href="https://github.com/jgoerner/corona-hackathon/issues/new?assignees=&labels=&template=workpackage.md&title=">Get Involved</a>        
   </p>
   
 </p>
