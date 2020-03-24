@@ -11,7 +11,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  private validateForm: FormGroup;
+  validateForm: FormGroup;
 
   constructor(private fb: FormBuilder,
               private accountEndpoint: AccountEndpoint,
