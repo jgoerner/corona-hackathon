@@ -8,7 +8,7 @@
     #WirVsVirus Corona-Crisis Hackathon - organized by the German government
     <br />
     <br />
-    <a href="">View Demo</a>
+    <a href="https://swag-vs-virus.herokuapp.com/", target="_blank">View Demo</a>
     ·
     <a href="https://github.com/jgoerner/corona-hackathon/projects/1">Current Status</a>
     ·
