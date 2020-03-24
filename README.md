@@ -13,7 +13,10 @@
     <a href="https://github.com/jgoerner/corona-hackathon/projects/1">Current Status</a>
     ·
     <a href="https://github.com/jgoerner/corona-hackathon/issues/new?assignees=&labels=&template=workpackage.md&title=">Get Involved</a>
+    <img src="images/logo-swag.png" alt="Logo" width="200" height="200">
+        
   </p>
+  
 </p>
 
 ## 🗂 Table of Contents
@@ -40,7 +43,23 @@ The current measures for short-time-work are **bureaucratic**, job agencies are 
 
 SWAG helps to mitigate this imbalance and directly connects employer and employees, building on the principles **ease of use**, **flexibility** & **optimized allocation**.
 
-## 🧪 Unique Selling Point
+<!-- in app screenshots -->
+<p align="center">
+    <b>Homepage</b>
+    <img src="images/ui/swag-02.png" alt="Logo">
+</p>
+
+<p align="center">
+    <b>Refine Employee Profile</b>
+    <img src="images/ui/swag-04.png" alt="Logo">
+</p>
+
+<p align="center">
+    <b>Create Open Jobs</b>
+    <img src="images/ui/swag-05.png" alt="Logo">
+</p>
+
+## 🧪 UniqueSelling Point
 > What is unique about our approach?
 
 #### ⚡️ Batteries Included
